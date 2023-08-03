@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'atoms/button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,11 +61,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: Button(
+        width: 200,
+        height: 50,
+        radius: 51,
+        bgColor: "0xFFFACB28",
+        label: "Dang Ky Ngay",
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        iconPath: "assets/images/arrow.svg",
+        iconWidth: 16,
+        iconHeight: 30,
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class OTAImage extends StatelessWidget {
   final String path;
@@ -14,11 +15,10 @@ class OTAImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget image = Image.asset(
+    return SvgPicture.asset(
       path,
       width: widthImage,
       height: heightImage,
     );
-    return image;
   }
 }
