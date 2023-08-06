@@ -44,14 +44,14 @@ class _MyHomePageState extends State<MyHomePage> {
             forceElevated: true,
             shadowColor: Colors.black,
             pinned: true,
-            stretch: true,
+            // stretch: true,
             flexibleSpace: FlexibleSpaceBar(
               background: MyAppBar(
                 logo: "assets/images/logo.svg",
                 widthLogo: 29.73,
                 heightLogo: 46,
                 backgroundColor: "0xFF0353CC",
-                toolbarHeight: 78,
+                // toolbarHeight: 78,
               ),
             ),
           ),
@@ -79,10 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 225,
                               margin: const EdgeInsets.only(left: 132, top: 79),
                               child: const Text(
-                                "Adsota Academy",
+                                "LEARN UNLEARN RELEARN",
                                 style: TextStyle(
                                   color: Color(0xFF0353CC),
-                                  fontSize: 75,
+                                  fontSize: 70,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Container(
                               width: 200,
                               height: 50,
-                              margin: const EdgeInsets.only(left: 132, top: 66),
+                              margin: const EdgeInsets.only(top: 66),
                               child: const Button(
                                 width: 314,
                                 height: 71,
@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         width: 527,
                         height: 511,
-                        margin: const EdgeInsets.only(left: 783, top: 58),
+                        margin: const EdgeInsets.only(top: 58),
                         child: Image.asset(
                           "assets/images/asian-girl.png",
                           fit: BoxFit.cover,
