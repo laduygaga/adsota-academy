@@ -6,7 +6,7 @@ class OTAImage extends StatelessWidget {
   final double? widthImage;
   final double? heightImage;
 
-  OTAImage(
+  const OTAImage(
       {Key? key,
       required this.path,
       required this.widthImage,
