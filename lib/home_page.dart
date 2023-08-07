@@ -32,6 +32,8 @@ class MyHomePage extends StatelessWidget {
           SliverAppBar(
             forceElevated: true,
             shadowColor: Colors.black,
+            collapsedHeight: 78,
+            expandedHeight: 78,
             pinned: true,
             stretch: true,
             flexibleSpace: FlexibleSpaceBar(

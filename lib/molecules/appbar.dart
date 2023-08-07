@@ -4,12 +4,11 @@ import '../atoms/button.dart';
 import '../atoms/image.dart';
 import '../atoms/text.dart';
 
-class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
+class MyAppBar extends StatefulWidget {
   final String logo;
   final double widthLogo;
   final double heightLogo;
   final String backgroundColor;
-  // final double toolbarHeight;
 
   const MyAppBar({
     Key? key,
@@ -17,14 +16,11 @@ class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
     required this.widthLogo,
     required this.heightLogo,
     required this.backgroundColor,
-    // required this.toolbarHeight,
 
   }) : super(key: key);
 
   @override
   State<MyAppBar> createState() => _MyAppBarState();
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class _MyAppBarState extends State<MyAppBar> {
@@ -32,10 +28,9 @@ class _MyAppBarState extends State<MyAppBar> {
   @override
   Widget build(BuildContext context) {
       return Container(
-        width: 1440,
-        height: 78,
         color: Color(int.parse(widget.backgroundColor)),
         child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(width: 161.25),
             OTAImage(
@@ -51,17 +46,18 @@ class _MyAppBarState extends State<MyAppBar> {
                 Text(
                   "Adsota",
                   style: TextStyle(
-                    fontSize: 23,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     letterSpacing: 2,
+                    height: 1,
                 ),
               ),
                 Text(
                   "Academy",
                   style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w100,
                     color: Colors.white,
                     letterSpacing: 1,
                 ),
@@ -111,7 +107,7 @@ class _MyAppBarState extends State<MyAppBar> {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(right: 161.25),
+            margin: const EdgeInsets.only(right: 161.25, left: 90),
             child: const Button(
               width: 180,
               height: 33,
