@@ -3,20 +3,14 @@ import 'atoms/button.dart';
 import 'molecules/register_form.dart';
 
 class MainContent extends StatelessWidget {
+  final _formKey = GlobalKey();
 
-  const MainContent({super.key});
-
-  static const TextStyle menuTextStyle = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    color: Color(0xff696969),
-  );
-
-  static const TextStyle mainTextStyle = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-    color: Color(0xff252525),
-  );
+  MainContent({super.key});
+  // static const TextStyle menuTextStyle = TextStyle(
+  //   fontSize: 14,
+  //   fontWeight: FontWeight.w500,
+  //   color: Color(0xff696969),
+  // );
 
 
   @override
@@ -36,7 +30,7 @@ class MainContent extends StatelessWidget {
     children.add(_buildCourse());
     children.add(_buildOrientation());
     children.add(_buildAfterCourse());
-    children.add(_buildRegister());
+    children.add(_buildRegister(context));
     return children;
   }
 
@@ -48,7 +42,7 @@ class MainContent extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             width: 663,
             height: 600,
             child: Column(
@@ -57,12 +51,12 @@ class MainContent extends StatelessWidget {
                   width: 663,
                   height: 225,
                   margin: const EdgeInsets.only(left: 110, top: 40),
-                  child: Column(
+                  child: const Column(
                     children: [
-                      Container(
+                      SizedBox(
                         width: 663,
                         height: 75,
-                        child: const Text(
+                        child: Text(
                           "LEARN",
                           style: TextStyle(
                             color: Color(0xFFFFFFFF),
@@ -71,10 +65,10 @@ class MainContent extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: 663,
                         height: 75,
-                        child: const Text(
+                        child: Text(
                           "UNLEARN",
                           style: TextStyle(
                             color: Color(0xFFFACB28),
@@ -83,10 +77,10 @@ class MainContent extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: 663,
                         height: 75,
-                        child: const Text(
+                        child: Text(
                           "RELEARN",
                           style: TextStyle(
                             color: Color(0xFFFFFFFF),
@@ -111,11 +105,18 @@ class MainContent extends StatelessWidget {
                     ),
                   ),
                 ),
+                // InkWell(
+                //   onTap: () => _scrollToPosition(_formKey.currentContext!),
+                //     child: const Text(
+                //       'Massive',
+                //       style: menuTextStyle,
+                //     ),
+                //   ),
                 Container(
-                width: 314,
-                height: 71,
-                margin: const EdgeInsets.only(top: 50, right: 120),
-                child: const Button(
+                  width: 314,
+                  height: 71,
+                  margin: const EdgeInsets.only(top: 50, right: 120),
+                  child: Button(
                     width: 314,
                     height: 71,
                     label: "Đăng ký ngay",
@@ -127,6 +128,7 @@ class MainContent extends StatelessWidget {
                     iconHeight: 30,
                     iconWidth: 16,
                     spaces: 30,
+                    onPressed: () => _scrollToPosition(_formKey.currentContext!),
                   ),
                 ),
               ],
@@ -247,7 +249,7 @@ class MainContent extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           // text below image: name
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -706,7 +708,7 @@ class MainContent extends StatelessWidget {
     );
   }
 
-  Widget _buildRegister() {
+  Widget _buildRegister(BuildContext context) {
     return Container(
       width: 1440,
       height: 780,
@@ -714,18 +716,21 @@ class MainContent extends StatelessWidget {
       child: Center(
         child: Container(
           width: 1180,
-          height: 554,
+          height: 600,
           decoration: BoxDecoration(
             color: const Color(0xFFE0EDFF),
             borderRadius: BorderRadius.circular(24),
           ),
-          child: const Row(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox( width: 80, height: 6),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(height: 30),
+                  const SizedBox(
                     width: 416,
                     height: 61,
                     child: Text(
@@ -738,15 +743,99 @@ class MainContent extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // RegistrationForm()
+                  SizedBox(
+                    width: 530,
+                    height: 500,
+                    child:  RegistrationForm(
+                      key: _formKey,
+                      ),
+                    ),
                 ],
               ),
               // Add more widgets to the Row if needed
+              Container(
+                padding: const EdgeInsets.only(left: 72),
+                width: 570,
+                height: 600,
+                decoration: const BoxDecoration(
+                  color: Color(0xFF0353CC),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(24),
+                    bottomRight: Radius.circular(24),
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox( width: 408, height: 61,
+                      child: Text(
+                        "THÔNG TIN LIÊN HỆ",
+                        style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox( height: 52),
+                    const SizedBox( width: 228, height: 41,
+                      child: Text(
+                        "Adsota Agency",
+                        style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 24,
+                          fontWeight: FontWeight.w100,
+                        ),
+                      ),
+                    ),
+                    const SizedBox( height: 3),
+                    const SizedBox( width: 408, height: 174,
+                      child: Text(
+                        "Appota Building, số 16 ngõ 71 Láng Hạ, quận Ba Đình, Hà Nội\n\n0382 802 038\n\nadsotamkt@appota.com",
+                        style: TextStyle(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w100,
+                        ),
+                      ),
+                    ),
+                    const SizedBox( height: 65),
+                    SizedBox( width: 500, height: 34,
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Theo dõi chúng tôi tại",
+                            style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox( width: 10),
+                          Image.asset(
+                            "assets/images/contact.png",
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
-    // return  const RegistrationForm();
+
+  void _scrollToPosition(BuildContext context) {
+    Scrollable.ensureVisible(
+      context,
+      duration: const Duration(
+        milliseconds: 500,
+      ),
+    );
+  }
 }

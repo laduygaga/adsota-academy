@@ -26,10 +26,10 @@ class MyHomePage extends StatelessWidget {
   }
 
   Widget _buildWideLayout() {
-    return const Scaffold(
+    return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
+          const SliverAppBar(
             forceElevated: true,
             shadowColor: Colors.black,
             collapsedHeight: 78,
@@ -46,7 +46,7 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 0),
+            padding: const EdgeInsets.symmetric(horizontal: 0),
             sliver: MainContent(),
           ),
         ],
