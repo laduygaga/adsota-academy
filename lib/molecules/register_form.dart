@@ -1,115 +1,35 @@
 import 'package:flutter/material.dart';
-import '../atoms/button.dart';
+import '../atoms/form.dart';
 
-class RegistrationForm extends StatefulWidget {
+class RegistrationForm extends StatelessWidget{
   const RegistrationForm({super.key});
 
   @override
-  RegistrationFormState createState() => RegistrationFormState();
-}
-
-class RegistrationFormState extends State<RegistrationForm> {
-  final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _numberController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _companyController = TextEditingController();
-  final TextEditingController _roleController = TextEditingController();
-
-  @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            TextFormField(
-              controller: _nameController,
-              decoration: const InputDecoration(labelText: 'Name'),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your name';
-                }
-                return null;
-              },
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 30),
+        SizedBox(
+          width: 416,
+          height: 61,
+          child: Text(
+            "ĐĂNG KÝ NHẬN TƯ VẤN",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFF0353CC),
+              fontSize: 36,
+              fontWeight: FontWeight.bold,
             ),
-            TextFormField(
-              controller: _numberController,
-              decoration: const InputDecoration(labelText: 'Number'),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your number';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              controller: _emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your email';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              controller: _companyController,
-              decoration: const InputDecoration(labelText: 'Company'),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your company';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              controller: _roleController,
-              decoration: const InputDecoration(labelText: 'Role'),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your role';
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: 16),
-            Button(
-              label: 'Đăng Ký Ngay',
-              labelSize: 14,
-              labelColor: "0xFFFFFFFF",
-              radius: 51,
-              width: 480,
-              height: 44,
-              bgColor: "0xFF0353CC",
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: const Text('Success'),
-                        content: const Text('Registration success'),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('OK'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                }
-              },
-            ),
-          ],
+          ),
         ),
-      ),
+        SizedBox(
+          width: 530,
+          height: 500,
+          child: OTAForm(),
+        ),
+      ],
     );
   }
 }
-

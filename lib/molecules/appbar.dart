@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../atoms/button.dart';
 import '../atoms/image.dart';
-import '../atoms/text.dart';
+import '../atoms/text_underline_hover.dart';
 
 class MyAppBar extends StatefulWidget {
   final String logo;
@@ -31,6 +31,7 @@ class _MyAppBarState extends State<MyAppBar> {
         color: Color(int.parse(widget.backgroundColor)),
         child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(width: 161.25),
             OTAImage(
