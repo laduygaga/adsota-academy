@@ -7,6 +7,7 @@ import 'molecules/course.dart';
 import 'molecules/teacher.dart';
 import 'molecules/intro.dart';
 import 'molecules/title.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MainContent extends StatelessWidget {
 
@@ -57,21 +58,19 @@ class MainContent extends StatelessWidget {
       height: 807,
       color: const Color(0xFFFFFFFF),
       child:  const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 60),
-            child: Text.rich(
-              TextSpan(
-                text: "Đội ngũ giảng viên",
-                style: TextStyle(
-                  color: Color(0xFF121825),
-                  fontSize: 64,
-                  fontWeight: FontWeight.bold,
-                ),
+          Text.rich(
+            TextSpan(
+              text: "Đội ngũ giảng viên",
+              style: TextStyle(
+                color: Color(0xFF121825),
+                fontSize: 64,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 62),
           Teacher(),
         ],
       ),
@@ -84,17 +83,15 @@ class MainContent extends StatelessWidget {
       height: 755,
       color: const Color(0xFF0353CC),
       child:  const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 72),
-            child: Text.rich(
-              TextSpan(
-                text: "Các khóa học tại Adsota Academy",
-                style: TextStyle(
-                  color: Color(0xFFFFFFFF),
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                ),
+          Text.rich(
+            TextSpan(
+              text: "Các khóa học tại Adsota Academy",
+              style: TextStyle(
+                color: Color(0xFFFFFFFF),
+                fontSize: 48,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -119,7 +116,7 @@ class MainContent extends StatelessWidget {
       width: 1440,
       height: 1076,
       color: const Color(0xFFFFFFFF),
-      padding: const EdgeInsets.only(top: 154),
+      // padding: const EdgeInsets.only(top: 154),
       child: const AfterCourse(),
     );
   }
@@ -140,9 +137,10 @@ class MainContent extends StatelessWidget {
           child: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox( width: 80, height: 6),
+              SizedBox( width: 55),
               // Register
               RegistrationForm(),
+              SizedBox( width: 55),
               // Contact
               Contact(),
             ],

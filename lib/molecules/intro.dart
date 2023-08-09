@@ -7,10 +7,10 @@ class Intro extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Padding(
-          padding: EdgeInsets.only(top: 60),
-          child: Text.rich(
+        Text.rich(
             TextSpan(
               text: "Giới thiệu về ",
               style: TextStyle(
@@ -30,12 +30,11 @@ class Intro extends StatelessWidget{
               ],
             ),
           ),
-        ),
-        SizedBox(height: 35),
+        // ),
+        SizedBox(height: 44.5),
         SizedBox(height: 136, width: 722,
           child: Text(
             "Adsota Academy là học viện đào tạo Marketing với mục tiêu giúp các doanh nghiệp tiếp cận marketing với tư duy là nền tảng về truyền thông, thương hiệu và tiếp thị số. Từ đó, có thể ứng dụng triển khai các chiến lược nhằm tối ưu kết quả kinh doanh và giúp thương hiệu cất cánh.",
-            textAlign: TextAlign.center,
             style: TextStyle(
               color: Color(0xFF121825),
               fontSize: 20,

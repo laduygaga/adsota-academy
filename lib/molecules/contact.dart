@@ -8,7 +8,7 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 72),
-      width: 570,
+      width: 540,
       height: 600,
       decoration: const BoxDecoration(
         color: Color(0xFF0353CC),

@@ -9,9 +9,9 @@ class OTAOrientation extends StatelessWidget{
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 176),
             SizedBox(
               width: 488,
               height: 124,
@@ -25,52 +25,56 @@ class OTAOrientation extends StatelessWidget{
                 ),
               ),
             ),
-            SizedBox(width: 523,height: 175,
-              child: Padding(
-                padding: EdgeInsets.only(top: 33),
-                child: Text.rich(
-                  TextSpan(
-                    text: "Các cán bộ quản lý, nhân viên trong doanh nghiệp có",
-                    style: TextStyle(
-                      color: Color(0xFF121825),
-                      fontSize: 20,
-                      fontWeight: FontWeight.w100,
-                    ),
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: "mong muốn cải thiện tư duy marketing",
-                        style: TextStyle(
-                          color: Color(0xFF121825),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      TextSpan(
-                        text: " và cập nhật các phương pháp xây dựng, ",
-                        style: TextStyle(
-                          color: Color(0xFF121825),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                      TextSpan(
-                        text: "quản trị thương hiệu (branding) và tiếp thị số (digital marketing)",
-                        style: TextStyle(
-                          color: Color(0xFF121825),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      TextSpan(
-                        text: " và thực thi chiến lược.",
-                        style: TextStyle(
-                          color: Color(0xFF121825),
-                          fontSize: 20,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
+           SizedBox(height: 33),
+           SizedBox(width: 523,height: 175,
+             child: Text.rich(
+                TextSpan(
+                  text: "Các cán bộ quản lý, nhân viên trong doanh nghiệp có",
+                  style: TextStyle(
+                    color: Color(0xFF121825),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w100,
+                    height: 1.5,
+                    wordSpacing: 1,
                   ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "mong muốn cải thiện tư duy marketing",
+                      style: TextStyle(
+                        color: Color(0xFF121825),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        height: 1.5,
+                      ),
+                    ),
+                    TextSpan(
+                      text: " và cập nhật các phương pháp xây dựng, ",
+                      style: TextStyle(
+                        color: Color(0xFF121825),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w100,
+                        height: 1.5,
+                      ),
+                    ),
+                    TextSpan(
+                      text: "quản trị thương hiệu (branding) và tiếp thị số (digital marketing)",
+                      style: TextStyle(
+                        color: Color(0xFF121825),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        height: 1.5,
+                      ),
+                    ),
+                    TextSpan(
+                      text: " và thực thi chiến lược.",
+                      style: TextStyle(
+                        color: Color(0xFF121825),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w100,
+                        height: 1.5,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
