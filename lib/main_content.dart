@@ -7,7 +7,6 @@ import 'molecules/course.dart';
 import 'molecules/teacher.dart';
 import 'molecules/intro.dart';
 import 'molecules/title.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MainContent extends StatelessWidget {
 
@@ -24,79 +23,115 @@ class MainContent extends StatelessWidget {
 
   List<Widget> _buildContainer(BuildContext context) {
     List<Widget> children = [];
-    children.add(_buildTitle());
-    children.add(_buildIntro());
-    children.add(_buildTeacher());
-    children.add(_buildCourse());
+    children.add(_buildTitle(context));
+    children.add(_buildIntro(context));
+    children.add(_buildTeacher(context));
+    children.add(_buildCourse(context));
     children.add(_buildOrientation());
     children.add(_buildAfterCourse());
     children.add(_buildRegister(context));
     return children;
   }
 
-  Widget _buildTitle() {
+  Widget _buildTitle(BuildContext context) {
+    bool isWide = MediaQuery.of(context).size.width > 1200;
+    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1200;
     return Container(
-      width: 1440,
-      height: 656,
+      width: isWide ? 1440 : isNarrow ? 1200 : 600,
+      height: isWide ? 656 : isNarrow ? 656 : 656,
       color: const Color(0xFF0353CC),
       child: const OTATitle(),
     );
   }
 
-  Widget _buildIntro()  {
+  Widget _buildIntro(BuildContext context)  {
+    bool isWide = MediaQuery.of(context).size.width > 1200;
+    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1200;
     return Container(
-      width: 1440,
-      height: 384,
+      width: isWide ? 1440 : isNarrow ? 1200 : 600,
+      height: isWide ? 384 : isNarrow ? 384 : 384,
       color: const Color(0xFFFFFFFF),
       child: const Intro(),
     );
   }
 
-  Widget _buildTeacher()  {
+  Widget _buildTeacher(BuildContext context)  {
+    double height;
+    double width;
+    double maxWidth = MediaQuery.of(context).size.width;
+    if (maxWidth > 1440) {
+      maxWidth = 1440;
+    }
+    double fontSize = 64 * maxWidth / 1440;
+    if (maxWidth < 600) {
+      height = 1900;
+      width = 352;
+      fontSize = 38;
+    } else {
+      height = 1000 * maxWidth / 1440;
+      width = 1440 * maxWidth / 1440;
+    }
+    if (width > 1440) {
+      width = 1440;
+    }
+
     return Container(
-      width: 1440,
-      height: 807,
+      width: width,
+      height: height,
       color: const Color(0xFFFFFFFF),
-      child:  const Column(
+      child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text.rich(
             TextSpan(
               text: "Đội ngũ giảng viên",
               style: TextStyle(
-                color: Color(0xFF121825),
-                fontSize: 64,
+                color: const Color(0xFF121825),
+                fontSize: fontSize,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(height: 62),
-          Teacher(),
+          SizedBox(height: 62 * maxWidth / 1440),
+          const Teacher(),
         ],
       ),
     );
   }
 
-  Widget _buildCourse()  {
+  Widget _buildCourse(BuildContext context)  {
+    double height;
+    double maxWidth = MediaQuery.of(context).size.width;
+    double fontSize = 64 * maxWidth / 1440;
+    if (maxWidth < 600) {
+      height = 650 * 2;
+      fontSize = 32;
+    } else {
+      height = 755 * maxWidth / 1440;
+      fontSize = 48 * maxWidth / 1440;
+    }
+    if (maxWidth > 1440) {
+      maxWidth = 1440;
+    }
     return Container(
-      width: 1440,
-      height: 755,
+      width: maxWidth,
+      height: height,
       color: const Color(0xFF0353CC),
-      child:  const Column(
+      child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text.rich(
             TextSpan(
               text: "Các khóa học tại Adsota Academy",
               style: TextStyle(
-                color: Color(0xFFFFFFFF),
-                fontSize: 48,
+                color: const Color(0xFFFFFFFF),
+                fontSize: fontSize,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(height: 74),
-          Course(),
+          SizedBox(height: 74 * maxWidth / 1440),
+          const Course(),
         ],
       ),
     );

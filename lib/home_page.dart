@@ -38,6 +38,7 @@ class MyHomePage extends StatelessWidget {
             stretch: true,
             flexibleSpace: FlexibleSpaceBar(
               background: MyAppBar(
+                maxWidth: 1440,
                 logo: "assets/images/logo.svg",
                 widthLogo: 29.73,
                 heightLogo: 46,
@@ -67,6 +68,7 @@ class MyHomePage extends StatelessWidget {
             stretch: true,
             flexibleSpace: FlexibleSpaceBar(
               background: MyAppBar(
+                maxWidth: 1200,
                 logo: "assets/images/logo.svg",
                 widthLogo: 29.73,
                 heightLogo: 46,
@@ -88,6 +90,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(int.parse("0xFF0353CC")),
         title: const MyAppBar(
+          maxWidth: 600,
           logo: "assets/images/logo.svg",
           widthLogo: 29.73,
           heightLogo: 46,

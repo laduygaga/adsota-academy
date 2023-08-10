@@ -4,7 +4,14 @@ class TeacherCard extends StatefulWidget {
   final String? name;
   final String? image;
   final String? role;
-  const TeacherCard({Key? key, this.name, this.image, this.role}) : super(key: key);
+  final double? scale;
+  const TeacherCard({
+    Key? key,
+    this.name,
+    this.image,
+    this.role,
+    this.scale,
+  }) : super(key: key);
 
   @override
   TeacherCardState createState() => TeacherCardState();
@@ -34,63 +41,57 @@ class TeacherCardState extends State<TeacherCard> {
         child: Stack(
           children: [
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 352,
-                  height: 490,
-                  child: Image.asset(
+                Image.asset(
+                    width: 352 * widget.scale!,
+                    height: 490 * widget.scale!,
                     widget.image!,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
-                ),
+                // ),
                 const SizedBox(height: 30),
-                SizedBox(
-                  width: 352,
-                  height: 30,
-                  child: Text(
+                Text(
                     widget.name!,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Color(0xFF0353CC),
-                      fontSize: 24,
+                    style: TextStyle(
+                      color: const Color(0xFF0353CC),
+                      fontSize: 24 * widget.scale!,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
+                // ),
                 const SizedBox(height: 2),
-                SizedBox(
-                  width: 352,
-                  height: 30,
-                  child: Text(
+                Text(
                     widget.role!,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Color(0xFF121825),
-                      fontSize: 16,
+                    style: TextStyle(
+                      color: const Color(0xFF121825),
+                      fontSize: 16 * widget.scale!,
                       fontWeight: FontWeight.w100,
                     ),
                   ),
-                ),
+                // ),
               ],
             ),
             AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              alignment: Alignment.bottomCenter,
+              // alignment: Alignment.center,
               height: isHovered ? 60 : 0,
               child: Container(
-                width: 352,
-                height: 60,
+                width: 352 * widget.scale!,
+                height: 60 * widget.scale!,
                 color: Colors.blue, // Change this to your desired button color
                 child: Center(
                   child: GestureDetector(
                     onTap: () {
                       // Slide up to detail card
                     },
-                    child: const Text(
+                    child: Text(
                       'View Details',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 18 * widget.scale!,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

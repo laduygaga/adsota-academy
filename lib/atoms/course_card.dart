@@ -5,53 +5,63 @@ class CourseCard extends StatelessWidget{
   final String? title;
   final String? image;
   final String? content;
-  const CourseCard({Key? key, this.title, this.image, this.content}) : super(key: key);
+  final double? scale;
+  const CourseCard({
+    Key? key,
+    this.title,
+    this.image,
+    this.content,
+    this.scale,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 380,
-      height: 468,
+      width: 380 * scale!,
+      height: 468 * scale!,
       decoration: BoxDecoration(
         color: const Color(0xFFFFFFFF),
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
+            width: 380 * scale!,
             image!,
-            fit: BoxFit.cover,
+            fit: BoxFit.fitWidth,
           ),
-          const SizedBox(height: 32.21),
+          SizedBox(height: 32.21 * scale!),
           Text(
           title!,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            color: Color(0xFF121825),
-            fontSize: 24,
+          style: TextStyle(
+            color: const Color(0xFF121825),
+            fontSize: 24 * scale!,
             fontWeight: FontWeight.bold,
-            letterSpacing: 1,
+            letterSpacing: 1 * scale!,
             ),
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16 * scale!),
           Text(
             content!,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Color(0xFF121825),
-              fontSize: 16,
+            style: TextStyle(
+              color: const Color(0xFF121825),
+              fontSize: 16 * scale!,
               fontWeight: FontWeight.w100,
-              letterSpacing: 2,
+              letterSpacing: 2 * scale!,
             ),
           ),
-          const SizedBox(height: 16),
-          const Button(
-            width: 180,
-            height: 33,
+          SizedBox(height: 16 * scale!),
+          Button(
+            width: 180 * scale! + 8,
+            height: 33 * scale! + 8,
             label: "Chi Tiết Khóa Học",
             bgColor: "0xFF0353CC",
             labelColor: "0xFFFFFFFF",
-            labelSize: 14,
+            labelSize: 14 * scale!,
             radius: 51,
           ),
         ],
