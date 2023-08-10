@@ -44,34 +44,31 @@ class TeacherCardState extends State<TeacherCard> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                    width: 352 * widget.scale!,
-                    height: 490 * widget.scale!,
-                    widget.image!,
-                    fit: BoxFit.contain,
-                  ),
-                // ),
+                  width: 352 * widget.scale!,
+                  height: 490 * widget.scale!,
+                  widget.image!,
+                  fit: BoxFit.contain,
+                ),
                 const SizedBox(height: 30),
                 Text(
-                    widget.name!,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: const Color(0xFF0353CC),
-                      fontSize: 24 * widget.scale!,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  widget.name!,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: const Color(0xFF0353CC),
+                    fontSize: 26 * widget.scale!,
+                    fontWeight: FontWeight.bold,
                   ),
-                // ),
+                ),
                 const SizedBox(height: 2),
                 Text(
-                    widget.role!,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: const Color(0xFF121825),
-                      fontSize: 16 * widget.scale!,
-                      fontWeight: FontWeight.w100,
-                    ),
+                  widget.role!,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: const Color(0xFF121825),
+                    fontSize: 18 * widget.scale!,
+                    fontWeight: FontWeight.w100,
                   ),
-                // ),
+                ),
               ],
             ),
             AnimatedContainer(

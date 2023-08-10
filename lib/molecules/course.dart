@@ -30,7 +30,7 @@ class Course extends StatelessWidget{
             ],
           );
         } else if (screenWidth > 600 && screenWidth <= 1200) {
-          double scale = screenWidth / 1440;
+          double scale = screenWidth / 1200;
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

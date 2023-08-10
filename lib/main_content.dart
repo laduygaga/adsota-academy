@@ -27,18 +27,18 @@ class MainContent extends StatelessWidget {
     children.add(_buildIntro(context));
     children.add(_buildTeacher(context));
     children.add(_buildCourse(context));
-    children.add(_buildOrientation());
-    children.add(_buildAfterCourse());
+    children.add(_buildOrientation(context));
+    children.add(_buildAfterCourse(context));
     children.add(_buildRegister(context));
     return children;
   }
 
   Widget _buildTitle(BuildContext context) {
-    bool isWide = MediaQuery.of(context).size.width > 1200;
-    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1200;
+    bool isWide = MediaQuery.of(context).size.width >= 1440;
+    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1440;
     return Container(
       width: isWide ? 1440 : isNarrow ? 1200 : 600,
-      height: isWide ? 656 : isNarrow ? 656 : 656,
+      height: isWide ? 656 : isNarrow ? 456 : 656,
       color: const Color(0xFF0353CC),
       child: const OTATitle(),
     );
@@ -137,34 +137,47 @@ class MainContent extends StatelessWidget {
     );
   }
 
-  Widget _buildOrientation() {
+  Widget _buildOrientation(BuildContext context) {
+    bool isWide = MediaQuery.of(context).size.width >= 1440;
+    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1440;
     return Container(
-      width: 1440,
-      height: 654,
+      width: isWide ? 1440 : isNarrow ? 1200 : 600,
+      height: isWide ? 656 : isNarrow ? 456 : 656,
       color: const Color(0xFFE4EFFF),
       child: const OTAOrientation(),
     );
   }
 
-  Widget _buildAfterCourse() {
+  Widget _buildAfterCourse(BuildContext context) {
+    double height;
+    double maxWidth = MediaQuery.of(context).size.width;
+    if (maxWidth < 600) {
+      height = 650 * 2;
+    } else {
+      height = 1076 * maxWidth / 1440;
+    }
+    if (maxWidth > 1440) {
+      maxWidth = 1440;
+    }
     return Container(
-      width: 1440,
-      height: 1076,
+      width: maxWidth,
+      height: height,
       color: const Color(0xFFFFFFFF),
-      // padding: const EdgeInsets.only(top: 154),
       child: const AfterCourse(),
     );
   }
 
   Widget _buildRegister(BuildContext context) {
+    bool isWide = MediaQuery.of(context).size.width >= 1440;
+    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1440;
     return Container(
-      width: 1440,
-      height: 780,
+      width: isWide ? 1440 : isNarrow ? 1200 : 600,
+      height: isWide ? 780 : isNarrow ? 780 : 780,
       color: const Color(0xFFF8FBFF),
       child: Center(
         child: Container(
-          width: 1180,
-          height: 600,
+          width: isWide ? 1180 : isNarrow ? 980 : 580,
+          height: isWide ? 600 : isNarrow ? 600 : 600,
           decoration: BoxDecoration(
             color: const Color(0xFFE0EDFF),
             borderRadius: BorderRadius.circular(24),
