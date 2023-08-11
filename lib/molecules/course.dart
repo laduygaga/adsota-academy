@@ -54,14 +54,14 @@ class Course extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CourseCard(
-                scale: 1,
+                scale: 0.9,
                 title: "Branding Marketing",
                 image: "assets/images/brand-marketing.png",
                 content: "Khóa học cung cấp tư duy cơ bản về việc xây dựng và quản trị thương hiệu cho doanh nghiệp, sản phẩm.",
               ),
               SizedBox(height: 48),
               CourseCard(
-                scale: 1,
+                scale: 0.9,
                 title: "Digital Marketing",
                 image: "assets/images/digital-marketing.png",
                 content: "Khóa học cung cấp kiến thức cơ bản về bản chất của các kênh digital và phương pháp triển khai chiến lược quảng cáo trên các kênh này.",

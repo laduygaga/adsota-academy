@@ -38,7 +38,7 @@ class MainContent extends StatelessWidget {
     bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1440;
     return Container(
       width: isWide ? 1440 : isNarrow ? 1200 : 600,
-      height: isWide ? 656 : isNarrow ? 456 : 656,
+      height: isWide ? 656 : isNarrow ? 456 : 720,
       color: const Color(0xFF0353CC),
       child: const OTATitle(),
     );
@@ -49,7 +49,7 @@ class MainContent extends StatelessWidget {
     bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1200;
     return Container(
       width: isWide ? 1440 : isNarrow ? 1200 : 600,
-      height: isWide ? 384 : isNarrow ? 384 : 384,
+      height: isWide ? 384 : isNarrow ? 334 : 364,
       color: const Color(0xFFFFFFFF),
       child: const Intro(),
     );
@@ -142,7 +142,7 @@ class MainContent extends StatelessWidget {
     bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1440;
     return Container(
       width: isWide ? 1440 : isNarrow ? 1200 : 600,
-      height: isWide ? 656 : isNarrow ? 456 : 656,
+      height: isWide ? 656 : isNarrow ? 456 : 700,
       color: const Color(0xFFE4EFFF),
       child: const OTAOrientation(),
     );
@@ -152,12 +152,13 @@ class MainContent extends StatelessWidget {
     double height;
     double maxWidth = MediaQuery.of(context).size.width;
     if (maxWidth < 600) {
-      height = 650 * 2;
+      height = 1076 * 1.7;
     } else {
       height = 1076 * maxWidth / 1440;
     }
     if (maxWidth > 1440) {
       maxWidth = 1440;
+      height = 1076;
     }
     return Container(
       width: maxWidth,
@@ -168,34 +169,60 @@ class MainContent extends StatelessWidget {
   }
 
   Widget _buildRegister(BuildContext context) {
-    bool isWide = MediaQuery.of(context).size.width >= 1440;
-    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1440;
-    return Container(
-      width: isWide ? 1440 : isNarrow ? 1200 : 600,
-      height: isWide ? 780 : isNarrow ? 780 : 780,
-      color: const Color(0xFFF8FBFF),
-      child: Center(
-        child: Container(
-          width: isWide ? 1180 : isNarrow ? 980 : 580,
-          height: isWide ? 600 : isNarrow ? 600 : 600,
-          decoration: BoxDecoration(
-            color: const Color(0xFFE0EDFF),
-            borderRadius: BorderRadius.circular(24),
-          ),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox( width: 55),
-              // Register
-              RegistrationForm(),
-              SizedBox( width: 55),
-              // Contact
-              Contact(),
-            ],
+    double height;
+    double maxWidth = MediaQuery.of(context).size.width;
+    if (maxWidth <= 800) {
+      height = 1076 * 1.7;
+    } else {
+      height = 700;
+    }
+    if (maxWidth >= 1440) {
+      maxWidth = 1440;
+    }
+    if (maxWidth > 800) {
+      return Container(
+        width: maxWidth,
+        height: height,
+        color: const Color(0xFFF8FBFF),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox( width: 55 * maxWidth / 1440),
+            // Register
+            RegistrationForm(maxWidth: maxWidth),
+            SizedBox( width: 120* maxWidth / 1440), // Contact
+            Contact(maxWidth: maxWidth),
+          ],
+        ),
+      );
+    } else {
+      return Container(
+        width: maxWidth,
+        height: height,
+        color: const Color(0xFFF8FBFF),
+        child: Center(
+          child: Container(
+            width: 600,
+            height: 1400,
+            decoration: BoxDecoration(
+              color: const Color(0xFFE0EDFF),
+              borderRadius: BorderRadius.circular(24),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // SizedBox( height: 55),
+                // Register
+                RegistrationForm(maxWidth: maxWidth),
+                const SizedBox( height: 20),
+                // Contact
+                const Contact(maxWidth: 600),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    }
   }
 
   void _scrollToPosition(BuildContext context) {

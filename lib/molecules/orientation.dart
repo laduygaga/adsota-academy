@@ -33,7 +33,7 @@ class OTAOrientation extends StatelessWidget{
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Text.rich(
                     TextSpan(
                       text: "Các cán bộ quản lý, nhân viên trong doanh nghiệp có\n",
@@ -87,9 +87,9 @@ class OTAOrientation extends StatelessWidget{
                 ),
                 if (isSmallLayout)
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.only(top: 20),
                     child: Image.asset(
-                      width: constraints.maxWidth * 0.6,
+                      width: constraints.maxWidth * 0.7,
                       "assets/images/smiling-boy.png",
                       fit: BoxFit.contain,
                     ),

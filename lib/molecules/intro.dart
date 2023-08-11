@@ -11,9 +11,9 @@ class Intro extends StatelessWidget{
         bool isWide = constraints.maxWidth > 1200;
         bool isNarrow = constraints.maxWidth > 600 && constraints.maxWidth < 1200;
         double titleFontSize =  isWide ? 64 : isNarrow ? 48 : 32;
-        double contentFontSize = isWide ? 20 : isNarrow ? 16 : 14;
-        double leftPadding = isWide ? 359 : isNarrow ? 150 : 100;
-        double rightPadding = isWide ? 250 : isNarrow ? 150: 100;
+        double contentFontSize = isWide ? 24 : isNarrow ? 18 : 16;
+        double leftPadding = 0;
+        double rightPadding = 0;
         return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,7 +27,7 @@ class Intro extends StatelessWidget{
                     color: const Color(0xFF121825),
                     fontSize: titleFontSize,
                     fontWeight: FontWeight.bold,
-                    height: 1.2,
+                    height: 1.8,
                   ),
                   children: <TextSpan>[
                     TextSpan(
@@ -36,7 +36,7 @@ class Intro extends StatelessWidget{
                         color: const Color(0xFF0353CC),
                         fontSize: titleFontSize,
                         fontWeight: FontWeight.bold,
-                        height: 1.2,
+                        height: 1.8,
                       ),
                     ),
                   ],
@@ -47,13 +47,13 @@ class Intro extends StatelessWidget{
             Padding(
               padding: EdgeInsets.only(left: leftPadding, right: rightPadding),
               child: Text(
-                "Adsota Academy là học viện đào tạo Marketing với mục tiêu giúp các doanh nghiệp tiếp cận marketing với tư duy là nền tảng về truyền thông, thương hiệu và tiếp thị số. Từ đó, có thể ứng dụng triển khai các chiến lược nhằm tối ưu kết quả kinh doanh và giúp thương hiệu cất cánh.",
+                "Adsota Academy là học viện đào tạo Marketing với mục tiêu giúp các\n doanh nghiệp tiếp cận marketing với tư duy là nền tảng về truyền thông,\n thương hiệu và tiếp thị số. Từ đó, có thể ứng dụng triển khai các chiến\n lược nhằm tối ưu kết quả kinh doanh và giúp thương hiệu cất cánh.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: const Color(0xFF121825),
                   fontSize: contentFontSize,
                   fontWeight: FontWeight.w100,
-                  height: 1.5,
+                  height: 1.8,
                 ),
               ),
             ),

@@ -2,80 +2,158 @@
 import 'package:flutter/material.dart';
 
 class Contact extends StatelessWidget {
-  const Contact({super.key});
+  final double? maxWidth;
+  const Contact({Key? key, this.maxWidth}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(left: 72),
-      width: 540,
-      height: 600,
-      decoration: const BoxDecoration(
-        color: Color(0xFF0353CC),
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(24),
-          bottomRight: Radius.circular(24),
+    if (maxWidth != null && maxWidth! > 800) {
+      double scale = maxWidth! / 1440;
+      return Container(
+        // padding: EdgeInsets.only(left: 72 * scale, right: 72 * scale),
+        width: 540 * scale,
+        height: 600 * scale,
+        decoration: const BoxDecoration(
+          color: Color(0xFF0353CC),
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(24),
+            bottomRight: Radius.circular(24),
+          ),
         ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox( width: 408, height: 61,
-            child: Text(
-              "THÔNG TIN LIÊN HỆ",
-              style: TextStyle(
-                color: Color(0xFFFFFFFF),
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 30 * scale),
+              child: Text(
+                "THÔNG TIN LIÊN HỆ\n",
+                style: TextStyle(
+                  color: const Color(0xFFFFFFFF),
+                  fontSize: 36 * scale,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          const SizedBox( height: 52),
-          const SizedBox( width: 228, height: 41,
-            child: Text(
-              "Adsota Agency",
-              style: TextStyle(
-                color: Color(0xFFFFFFFF),
-                fontSize: 24,
-                fontWeight: FontWeight.w100,
+            Padding(
+              padding: EdgeInsets.only(left: 30 * scale),
+              child: Text(
+                "Adsota Agency",
+                style: TextStyle(
+                  color: const Color(0xFFFFFFFF),
+                  fontSize: 24 * scale,
+                  fontWeight: FontWeight.w400,
+                  height: 1.5,
+                ),
               ),
             ),
-          ),
-          const SizedBox( height: 3),
-          const SizedBox( width: 408, height: 174,
-            child: Text(
-              "Appota Building, số 16 ngõ 71 Láng Hạ, quận Ba Đình, Hà Nội\n\n0382 802 038\n\nadsotamkt@appota.com",
-              style: TextStyle(
-                color: Color(0xFFFFFFFF),
-                fontSize: 20,
-                fontWeight: FontWeight.w100,
+            Padding(
+              padding: EdgeInsets.only(left: 32 * scale),
+              child: Text(
+                "Appota Building, số 16 ngõ 71 Láng Hạ,\n quận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
+                style: TextStyle(
+                  color: const Color(0xFFFFFFFF),
+                  fontSize: 20 * scale,
+                  fontWeight: FontWeight.w100,
+                ),
               ),
             ),
-          ),
-          const SizedBox( height: 65),
-          SizedBox( width: 500, height: 34,
-            child: Row(
-              children: [
-                const Text(
-                  "Theo dõi chúng tôi tại",
-                  style: TextStyle(
-                    color: Color(0xFFFFFFFF),
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+            Padding(
+              padding: EdgeInsets.only(left: 30 * scale),
+              child: Row(
+                children: [
+                  Text(
+                    "Theo dõi chúng tôi tại",
+                    style: TextStyle(
+                      color: const Color(0xFFFFFFFF),
+                      fontSize: 20 * scale,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox( width: 10),
-                Image.asset(
-                  "assets/images/contact.png",
-                  fit: BoxFit.cover,
-                ),
-              ],
+                  SizedBox( width: 10 * scale),
+                  Image.asset(
+                    "assets/images/contact.png",
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
             ),
+          ],
+        ),
+      );
+    } else {
+      return Container(
+        padding: const EdgeInsets.all(32),
+        width: 540,
+        height: 600,
+        decoration: const BoxDecoration(
+          color: Color(0xFF0353CC),
+          borderRadius: BorderRadius.all(
+            Radius.circular(24),
           ),
-        ],
-      ),
-    );
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 32),
+              child: Text(
+                "THÔNG TIN LIÊN HỆ\n",
+                style: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 32),
+              child: Text(
+                "Adsota Agency",
+                style: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                  height: 1.5,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 32),
+              child: Text(
+                "Appota Building, số 16 ngõ 71 Láng Hạ,\n quận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
+                style: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w100,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 32),
+              child: Row(
+                children: [
+                  const Text(
+                    "Theo dõi chúng tôi tại",
+                    style: TextStyle(
+                      color: Color(0xFFFFFFFF),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox( width: 10),
+                  Image.asset(
+                    "assets/images/contact.png",
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
   }
 }
 

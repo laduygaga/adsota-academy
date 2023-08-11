@@ -64,7 +64,7 @@ class OTATitle extends StatelessWidget {
                     color: const Color(0xFFFFFFFF),
                     fontSize: contentFontSize,
                     fontWeight: FontWeight.w100,
-                    height: 1.2,
+                    height: 1.3,
                   ),
                 ),
               ),
@@ -72,13 +72,13 @@ class OTATitle extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: Image.asset(
-                    width: constraints.maxWidth * 0.6,
+                    width: constraints.maxWidth * 0.8,
                     "assets/images/asian-girl.png",
                     fit: BoxFit.contain,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: isWideLayout ? 76 : (isNarrowLayout ? 30: 15)),
+                  padding: EdgeInsets.only(top: isWideLayout ? 76 : (isNarrowLayout ? 30: 20)),
                   child: Button(
                     width: isWideLayout ? 314 : (isNarrowLayout ? 200 : 160),
                     height: isWideLayout ? 71 : (isNarrowLayout ? 51 : 41),
