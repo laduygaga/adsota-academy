@@ -45,7 +45,6 @@ class RegistrationForm extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 30),
           Text(
             "ĐĂNG KÝ NHẬN TƯ VẤN",
             textAlign: TextAlign.center,
@@ -55,7 +54,7 @@ class RegistrationForm extends StatelessWidget{
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 100),
+          SizedBox(height: 50),
           SizedBox(
             child: OTAForm(),
           ),

@@ -201,7 +201,7 @@ class MainContent extends StatelessWidget {
         child: Center(
           child: Container(
             width: 600,
-            height: 1400,
+            height: 1200,
             decoration: BoxDecoration(
               color: const Color(0xFFE0EDFF),
               borderRadius: BorderRadius.circular(24),
