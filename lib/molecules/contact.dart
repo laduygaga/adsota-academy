@@ -25,7 +25,7 @@ class Contact extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 30 * scale),
+              padding: EdgeInsets.only(left: 80 * scale),
               child: Text(
                 "THÔNG TIN LIÊN HỆ\n",
                 style: TextStyle(
@@ -36,7 +36,7 @@ class Contact extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 30 * scale),
+              padding: EdgeInsets.only(left: 80 * scale),
               child: Text(
                 "Adsota Agency",
                 style: TextStyle(
@@ -48,7 +48,7 @@ class Contact extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 32 * scale),
+              padding: EdgeInsets.only(left: 80 * scale),
               child: Text(
                 "Appota Building, số 16 ngõ 71 Láng Hạ,\n quận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
                 style: TextStyle(
@@ -59,7 +59,7 @@ class Contact extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 30 * scale),
+              padding: EdgeInsets.only(left: 80 * scale),
               child: Row(
                 children: [
                   Text(

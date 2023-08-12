@@ -23,18 +23,13 @@ class RegistrationForm extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 30 * scale),
-            SizedBox(
-              width: 416 * scale,
-              height: 61 * scale,
-              child: Text(
-                "ĐĂNG KÝ NHẬN TƯ VẤN",
-                // textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: const Color(0xFF0353CC),
-                  fontSize: 36 * scale,
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              "ĐĂNG KÝ NHẬN TƯ VẤN",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: const Color(0xFF0353CC),
+                fontSize: 36 * scale,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
@@ -48,25 +43,20 @@ class RegistrationForm extends StatelessWidget{
     } else {
       return const Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 30),
-          SizedBox(
-            width: 416,
-            height: 61,
-            child: Text(
-              "ĐĂNG KÝ NHẬN TƯ VẤN",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xFF0353CC),
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+          Text(
+            "ĐĂNG KÝ NHẬN TƯ VẤN",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFF0353CC),
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
             ),
           ),
+          SizedBox(height: 100),
           SizedBox(
-            width: 530,
-            height: 530,
             child: OTAForm(),
           ),
         ],

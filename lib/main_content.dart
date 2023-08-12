@@ -188,9 +188,7 @@ class MainContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox( width: 55 * maxWidth / 1440),
-            // Register
             RegistrationForm(maxWidth: maxWidth),
-            SizedBox( width: 120* maxWidth / 1440), // Contact
             Contact(maxWidth: maxWidth),
           ],
         ),
