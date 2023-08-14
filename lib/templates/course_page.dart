@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../molecules/course_summary.dart';
+import '../molecules/course_content.dart';
 
 class CourseTemplate extends StatelessWidget{
   final String title1;
@@ -48,6 +49,10 @@ class CourseTemplate extends StatelessWidget{
             height: isWideLayout ? 639 : isNarrowLayout ? 319.5 : 213,
             courseImage,
             fit: BoxFit.cover,
+          ),
+          CourseContent(
+            title: 'Nội dung khóa học',
+            content: content,
           ),
         ]
       );
