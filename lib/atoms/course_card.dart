@@ -6,12 +6,14 @@ class CourseCard extends StatelessWidget{
   final String? image;
   final String? content;
   final double? scale;
+  final VoidCallback? onViewDetailsPressed; // Add this callback
   const CourseCard({
     Key? key,
     this.title,
     this.image,
     this.content,
     this.scale,
+    this.onViewDetailsPressed, // Add this callback
   }) : super(key: key);
 
   @override
@@ -61,6 +63,7 @@ class CourseCard extends StatelessWidget{
             labelColor: "0xFFFFFFFF",
             labelSize: 16 * scale!,
             radius: 51,
+            onPressed: onViewDetailsPressed, // Add this callback
           ),
         ],
       ),

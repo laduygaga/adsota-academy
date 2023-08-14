@@ -13,7 +13,7 @@ class RegistrationForm extends StatelessWidget{
         width: 540 * scale,
         height: 600 * scale,
         decoration: const BoxDecoration(
-          color: const Color(0xFFE0EDFF),
+          color: Color(0xFFE0EDFF),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(24),
             bottomLeft: Radius.circular(24),

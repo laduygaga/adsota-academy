@@ -209,11 +209,8 @@ class MainContent extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // SizedBox( height: 55),
-                // Register
                 RegistrationForm(maxWidth: maxWidth),
                 const SizedBox( height: 20),
-                // Contact
                 const Contact(maxWidth: 600),
               ],
             ),
@@ -221,14 +218,5 @@ class MainContent extends StatelessWidget {
         ),
       );
     }
-  }
-
-  void _scrollToPosition(BuildContext context) {
-    Scrollable.ensureVisible(
-      context,
-      duration: const Duration(
-        milliseconds: 500,
-      ),
-    );
   }
 }

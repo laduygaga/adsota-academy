@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import '../atoms/course_card.dart';
+import '../pages/desktop2.dart';
 
 class Course extends StatelessWidget{
-  const Course({Key? key}) : super(key: key);
+  final VoidCallback? onViewDetailsPressed; // Add this callback
+  const Course({
+    Key? key,
+    this.onViewDetailsPressed, // Add this callback
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +16,7 @@ class Course extends StatelessWidget{
         final double screenWidth = constraints.maxWidth;
 
         if (screenWidth > 1200) {
-          return const Row(
+          return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CourseCard(
@@ -19,13 +24,25 @@ class Course extends StatelessWidget{
                 title: "Branding Marketing",
                 image: "assets/images/brand-marketing.png",
                 content: "Khóa học cung cấp tư duy cơ bản về việc xây dựng và quản trị thương hiệu cho doanh nghiệp, sản phẩm.",
+                onViewDetailsPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Desktop2Page()),
+                  );
+                },
               ),
-              SizedBox(width: 220),
+              const SizedBox(width: 220),
               CourseCard(
                 scale: 1,
                 title: "Digital Marketing",
                 image: "assets/images/digital-marketing.png",
                 content: "Khóa học cung cấp kiến thức cơ bản về bản chất của các kênh digital và phương pháp triển khai chiến lược quảng cáo trên các kênh này.",
+                onViewDetailsPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Desktop2Page()),
+                  );
+                },
               ),
             ],
           );
@@ -39,6 +56,12 @@ class Course extends StatelessWidget{
                 title: "Branding Marketing",
                 image: "assets/images/brand-marketing.png",
                 content: "Khóa học cung cấp tư duy cơ bản về việc xây dựng và quản trị thương hiệu cho doanh nghiệp, sản phẩm.",
+                onViewDetailsPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Desktop2Page()),
+                  );
+                },
               ),
               SizedBox(width: 220 * scale),
               CourseCard(
@@ -46,11 +69,17 @@ class Course extends StatelessWidget{
                 title: "Digital Marketing",
                 image: "assets/images/digital-marketing.png",
                 content: "Khóa học cung cấp kiến thức cơ bản về bản chất của các kênh digital và phương pháp triển khai chiến lược quảng cáo trên các kênh này.",
+                onViewDetailsPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Desktop2Page()),
+                  );
+                },
               ),
             ],
           );
         } else {
-          return const Column(
+          return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CourseCard(
@@ -58,13 +87,25 @@ class Course extends StatelessWidget{
                 title: "Branding Marketing",
                 image: "assets/images/brand-marketing.png",
                 content: "Khóa học cung cấp tư duy cơ bản về việc xây dựng và quản trị thương hiệu cho doanh nghiệp, sản phẩm.",
+                onViewDetailsPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Desktop2Page()),
+                  );
+                },
               ),
-              SizedBox(height: 48),
+              const SizedBox(height: 48),
               CourseCard(
                 scale: 0.9,
                 title: "Digital Marketing",
                 image: "assets/images/digital-marketing.png",
                 content: "Khóa học cung cấp kiến thức cơ bản về bản chất của các kênh digital và phương pháp triển khai chiến lược quảng cáo trên các kênh này.",
+                onViewDetailsPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Desktop2Page()),
+                  );
+                },
               ),
             ],
           );
