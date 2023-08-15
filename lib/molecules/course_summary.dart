@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CourseSummary extends StatelessWidget{
   final String title1;
   final String title2;
-  final String content;
+  final String summaryContent;
   final String avatar;
   final String name;
   final String role;
@@ -17,7 +17,7 @@ class CourseSummary extends StatelessWidget{
     required this.avatar,
     required this.name,
     required this.role,
-    required this.content,
+    required this.summaryContent,
     required this.isWideLayout,
     required this.isNarrowLayout,
     required this.isSmallLayout,
@@ -57,7 +57,7 @@ class CourseSummary extends StatelessWidget{
                       ),
                     ),
                     TextSpan(
-                      text: content,
+                      text: summaryContent,
                       style: TextStyle(
                         color: const Color(0xFF121825),
                         fontSize: contentFontSize,

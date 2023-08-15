@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 
 import '../molecules/appbar.dart';
-import '../molecules/register_form.dart';
-import '../molecules/contact.dart';
 import '../templates/course_page.dart';
 
 class Desktop2Page extends StatelessWidget {
@@ -164,7 +162,6 @@ class MainContent extends StatelessWidget {
   List<Widget> _buildContainer(BuildContext context) {
     List<Widget> children = [];
     children.add(_buildBrandingCourse(context));
-    children.add(_buildRegister(context));
     return children;
   }
 
@@ -179,7 +176,7 @@ class MainContent extends StatelessWidget {
         return CourseTemplate(
           title1: "TỔNG QUAN VỀ KHÓA HỌC\n",
           title2: "BRANDING - MARKETING\n",
-          content: "Khóa học giới thiệu những kiến thức cơ bản về thương hiệu: Khái niệm,\nbản chất, đặc tính, định vị thương hiệu trên thị trường.\n\nKhóa học tập trung trang bị cho người học những mô hình có tính nguyên\ntắc với việc xây dựng, phát triển thương hiệu và giá trị của thương hiệu trên thị trường.\n Cung cấp tư duy hiện đại về quản trị thương hiệu, hình ảnh của công ty\nqua thương hiệu và khả năng ra quyết định về marketing liên quan đến\nthương hiệu.",
+          summaryContent: "Khóa học giới thiệu những kiến thức cơ bản về thương hiệu: Khái niệm,\nbản chất, đặc tính, định vị thương hiệu trên thị trường.\n\nKhóa học tập trung trang bị cho người học những mô hình có tính nguyên\ntắc với việc xây dựng, phát triển thương hiệu và giá trị của thương hiệu trên thị trường.\n Cung cấp tư duy hiện đại về quản trị thương hiệu, hình ảnh của công ty\nqua thương hiệu và khả năng ra quyết định về marketing liên quan đến\nthương hiệu.",
           isWideLayout: isWideLayout,
           isNarrowLayout: isNarrowLayout,
           isSmallLayout: isSmallLayout,
@@ -187,62 +184,17 @@ class MainContent extends StatelessWidget {
           name: "Chị Hoàng Thảo Anh",
           role: "CMO Adsota",
           courseImage: "assets/images/branding-marketing-big.png",
+          courseImageRefer: "assets/images/digital-mkt-3.png",
+          courseContent1: "",
+          courseContent2: "\u2022 Làm thế nào để xây dựng thương hiệu?\n\u2022 Xây dựng các điểm chạm thương hiệu như thế nào? \n\u2022 Làm sao để xác định chân dung khách hàng và nhu cầu của họ?",
+          courseContent3: "\u2022 Làm thế nào để xây dựng thương hiệu?\n\u2022 Xây dựng các điểm chạm thương hiệu như thế nào?\n\u2022 Làm sao để xác định chân dung khách hàng và nhu cầu của họ?",
+          courseValueTitle1: "Nắm vững nội dung quản trị thương hiệu",
+          courseValueTitle2: "Biết cách đánh giá các nội dung quản trị một thương hiệu cụ thể ",
+          courseValueContent1: "\u2022 Bản chất khái niệm, vai trò ý nghĩa của thương hiệu trong kinh doanh\n\u2022 Quy trình xây dựng, khai thác, duy trì và phát triển, thương hiệu\n  - Xác định giá trị cốt lõi và lựa chọn chiến lược định vị thương hiệu\n  - Thiết kế thương hiệu, hoạch định và triển khai các chương trình marketing xây dựng thương hiệu.\n  - Theo dõi sức mạnh thương hiệu, đo lường giá trị tài sản thương hiệu\n  - Duy trì, khai thác, bảo vệ và mở rộng thương hiệu.",
+          courseValueContent2: "\u2022 Sự phù hợp chiến lược thương hiệu với mục tiêu kinh doanh và cơ hội thị trường.\n \u2022 Tính nhất quán và hiệu quả của các hoạt động xây dựng và phát triển thương hiệu.\n\u2022 kết quả, thành tích thương hiệu đạt được từ góc độ thị trường và tài chính.",
         );
       },
     );
-  }
-
-
-  Widget _buildRegister(BuildContext context) {
-    double height;
-    double maxWidth = MediaQuery.of(context).size.width;
-    if (maxWidth <= 800) {
-      height = 1076 * 1.7;
-    } else {
-      height = 700;
-    }
-    if (maxWidth >= 1440) {
-      maxWidth = 1440;
-    }
-    if (maxWidth > 800) {
-      return Container(
-        width: maxWidth,
-        height: height,
-        color: const Color(0xFFF8FBFF),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox( width: 55 * maxWidth / 1440),
-            RegistrationForm(maxWidth: maxWidth),
-            Contact(maxWidth: maxWidth),
-          ],
-        ),
-      );
-    } else {
-      return Container(
-        width: maxWidth,
-        height: height,
-        color: const Color(0xFFF8FBFF),
-        child: Center(
-          child: Container(
-            width: 600,
-            height: 1200,
-            decoration: BoxDecoration(
-              color: const Color(0xFFE0EDFF),
-              borderRadius: BorderRadius.circular(24),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RegistrationForm(maxWidth: maxWidth),
-                const SizedBox( height: 20),
-                const Contact(maxWidth: 600),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
   }
 
 }
