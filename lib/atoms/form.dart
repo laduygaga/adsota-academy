@@ -28,10 +28,10 @@ void onPressedCallback(body) async {
 
   if (response.statusCode == 200) {
     // Success handling
-    print('Form data submitted successfully');
+    // print('Form data submitted successfully');
   } else {
     // Error handling
-    print('Form data submission failed');
+    // print('Form data submission failed');
   }
 }
 
@@ -141,7 +141,7 @@ void onPressedCallback(body) async {
                   labelColor: "0xFFFFFFFF",
                   radius: 51,
                   width: 480 * scale,
-                  height: 40 * scale,
+                  height: 44 * scale < 35 ? 35 : 44 * scale,
                   bgColor: "0xFF0353CC",
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {

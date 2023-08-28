@@ -10,7 +10,6 @@ class Teacher extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(maxWidth);
     if (maxWidth >= 1440) {
       // Use row layout for wide screens
       return const Row(
