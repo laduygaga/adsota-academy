@@ -4,29 +4,25 @@ import 'molecules/appbar.dart';
 import 'main_content.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+
+  final registerFormKey = GlobalKey();
+  MyHomePage({Key? key}) : super(key: key);
  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LayoutBuilder(
+    return LayoutBuilder(
         builder: (context, constraints) {
-          // return _buildWideLayout();
           if (constraints.maxWidth > 1200) {
             return _buildWideLayout();
-          // } else if (constraints.maxWidth > 600 &&
-          //     constraints.maxWidth <= 1200) {
-          //   return _buildNarrowLayout();
           } else {
             return _buildSmallLayout();
           }
         },
-      ),
     );
   }
 
   Widget _buildWideLayout() {
-    return const Scaffold(
+    return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -43,12 +39,13 @@ class MyHomePage extends StatelessWidget {
                 widthLogo: 29.73,
                 heightLogo: 46,
                 backgroundColor: "0xFF0353CC",
+                registerFormKey: registerFormKey,
               ),
             ),
           ),
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 0),
-            sliver: MainContent(),
+            padding: const EdgeInsets.symmetric(horizontal: 0),
+            sliver: MainContent(registerFormKey: registerFormKey),
           ),
         ],
       ),
@@ -56,7 +53,7 @@ class MyHomePage extends StatelessWidget {
   }
 
   Widget _buildNarrowLayout() {
-    return const Scaffold(
+    return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -73,12 +70,13 @@ class MyHomePage extends StatelessWidget {
                 widthLogo: 29.73,
                 heightLogo: 46,
                 backgroundColor: "0xFF0353CC",
+                registerFormKey: registerFormKey,
               ),
             ),
           ),
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 0),
-            sliver: MainContent(),
+            padding: const EdgeInsets.symmetric(horizontal: 0),
+            sliver: MainContent(registerFormKey: registerFormKey),
           ),
         ],
       ),
@@ -89,12 +87,16 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(int.parse("0xFF0353CC")),
-        title: const MyAppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        title: MyAppBar(
           maxWidth: 600,
           logo: "assets/images/logo.svg",
           widthLogo: 29.73,
           heightLogo: 46,
           backgroundColor: "0xFF0353CC",
+          registerFormKey: registerFormKey,
         ),
       ),
       drawer: Drawer(
@@ -160,11 +162,11 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: const CustomScrollView(
+      body: CustomScrollView(
         slivers: [
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 0),
-            sliver: MainContent(),
+            padding: const EdgeInsets.symmetric(horizontal: 0),
+            sliver: MainContent(registerFormKey: registerFormKey),
           ),
         ],
       ),

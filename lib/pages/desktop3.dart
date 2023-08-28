@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import '../molecules/appbar.dart';
 import '../templates/course_page.dart';
 
-class Desktop2Page extends StatelessWidget {
+class Desktop3Page extends StatelessWidget {
   final GlobalKey registerFormKey;
-  const Desktop2Page({
+  const Desktop3Page({
     Key? key,
     required this.registerFormKey
     }) : super(key: key);
@@ -177,30 +177,27 @@ class MainContent extends StatelessWidget {
     if (screenWidth > 1200) {
       scale = 1;
     }
-    return Container(
-      color: Color(int.parse("0xFFF5F5F5")),
-        child: CourseTemplate(
-        registerFormKey: registerFormKey,
-        scale: scale,
-        title1: "TỔNG QUAN VỀ KHÓA HỌC\n",
-        title2: "BRANDING - MARKETING\n",
-        summaryContent: "Khóa học giới thiệu những kiến thức cơ bản về thương hiệu: Khái niệm,\nbản chất, đặc tính, định vị thương hiệu trên thị trường.\n\nKhóa học tập trung trang bị cho người học những mô hình có tính nguyên\ntắc với việc xây dựng, phát triển thương hiệu và giá trị của thương hiệu\ntrên thị trường.\n\nCung cấp tư duy hiện đại về quản trị thương hiệu, hình ảnh của công ty\nqua thương hiệu và khả năng ra quyết định về marketing liên quan đến\nthương hiệu.",
-        avatar: "assets/images/Chị Hoàng Thảo Anh - CMO Adsota Agency 1.png",
-        name: "Chị Hoàng Thảo Anh",
-        role: "CMO Adsota",
-        courseImage: "assets/images/branding-marketing-big.png",
-        courseImageRefer: "assets/images/digital-mkt-3.png",
-        courseContentTitle1: "Buổi 1",
-        courseContentTitle2: "Buổi 2",
-        courseContentTitle3: "Buổi 3",
-        courseContent1: "",
-        courseContent2: "\u2022 Làm thế nào để xây dựng thương hiệu?\n\u2022 Xây dựng các điểm chạm thương hiệu như thế nào? \n\u2022 Làm sao để xác định chân dung khách hàng và nhu cầu của họ?",
-        courseContent3: "\u2022 Làm thế nào để xây dựng thương hiệu?\n\u2022 Xây dựng các điểm chạm thương hiệu như thế nào?\n\u2022 Làm sao để xác định chân dung khách hàng và nhu cầu của họ?",
-        courseValueTitle1: "Nắm vững nội dung quản trị thương hiệu",
-        courseValueTitle2: "Biết cách đánh giá các nội dung quản trị một thương hiệu cụ thể ",
-        courseValueContent1: "\u2022 Bản chất khái niệm, vai trò ý nghĩa của thương hiệu trong kinh doanh\n\u2022 Quy trình xây dựng, khai thác, duy trì và phát triển, thương hiệu\n  - Xác định giá trị cốt lõi và lựa chọn chiến lược định vị thương hiệu\n  - Thiết kế thương hiệu, hoạch định và triển khai các chương trình marketing xây dựng thương hiệu.\n  - Theo dõi sức mạnh thương hiệu, đo lường giá trị tài sản thương hiệu\n  - Duy trì, khai thác, bảo vệ và mở rộng thương hiệu.",
-        courseValueContent2: "\u2022 Sự phù hợp chiến lược thương hiệu với mục tiêu kinh doanh và cơ hội thị trường.\n \u2022 Tính nhất quán và hiệu quả của các hoạt động xây dựng và phát triển thương hiệu.\n\u2022 kết quả, thành tích thương hiệu đạt được từ góc độ thị trường và tài chính.",
-      ),
+    return CourseTemplate(
+      registerFormKey: registerFormKey,
+      scale: scale,
+      title1: "TỔNG QUAN VỀ KHÓA HỌC\n",
+      title2: "DIGITAL MARKETING\n",
+      summaryContent: "Khóa học giới thiệu những kiến thức cơ bản về Digital Marketing, bản chất của\ncác nền tảng số ứng dụng trong hoạt động marketing.\n\nBên cạnh đó, khóa học cung cấp cho người học phương pháp xây dựng và\nthực thi chiến dịch quảng cáo một cách hiệu quả, phù hợp cho thương hiệu.",
+      avatar: "assets/images/anh-dang-phu-vinh-ceo-adsota.png",
+      name: "Anh Đặng Phú Vinh",
+      role: "CEO Adsota",
+      courseImage: "assets/images/digital-marketing-big.png",
+      courseImageRefer: "assets/images/branding-mkt-3.png",
+      courseContentTitle1: "Buổi 1: Tổng quan về Digital Marketing",
+      courseContentTitle2: "Buổi 2: Performance Marketing",
+      courseContentTitle3: "Buổi 3",
+      courseContent1: "\u2022 Digital Marketing là gì?\n\u2022 Lợi ích của việc ứng dụng Digital Marketing?\n\u2022 Vị trí của Digital Marketing trong chiến lược Marketing tổng thể và xây dựng thương hiệu?",
+      courseContent2: "\u2022 Performance Marketing là gì?\n\u2022 Có những công cụ phương pháp nào để giải quyết Performance Marketing?\n\u2022 Chạy quảng cáo là gì, trên các nền tảng nào? Chạy quảng cáo giải quyết những vấn đề gì của doanh nghiệp?\n\u2022 Làm sao để chạy quảng cáo tốt? Ai có thể chạy quảng cáo?\n\u2022 Demo chạy quảng cáo",
+      courseContent3: "",
+      courseValueTitle1: "Nắm vững nội dung về Digital Marketing",
+      courseValueTitle2: "Có kỹ năng chạy quảng cáo",
+      courseValueContent1: "\u2022 Bản chất khái niệm, vai trò ý nghĩa của Digital Marketing với doanh nghiệp\n\u2022 Bản chất, đặc điểm của các nền tảng số",
+      courseValueContent2: "\u2022 Xây dựng, triển khai chiến dịch quảng cáo trên nền tảng số cho doanh nghiệp\n\u2022 Biết sử dụng các mẹo, bí quyết để tối ưu quảng cáo cho thương hiệu\n",
     );
   }
 

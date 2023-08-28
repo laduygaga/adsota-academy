@@ -45,13 +45,16 @@ class CourseCard extends StatelessWidget{
             ),
           ),
           SizedBox(height: 16 * scale!),
-          Text(
-            content!,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: const Color(0xFF121825),
-              fontSize: 18 * scale!,
-              fontWeight: FontWeight.w100,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16 * scale!),
+            child: Text(
+              content!,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: const Color(0xFF121825),
+                fontSize: 18 * scale!,
+                fontWeight: FontWeight.normal,
+              ),
             ),
           ),
           SizedBox(height: 16 * scale!),

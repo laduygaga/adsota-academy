@@ -10,6 +10,7 @@ class MyAppBar extends StatefulWidget {
   final double heightLogo;
   final double maxWidth;
   final String backgroundColor;
+  final GlobalKey registerFormKey;
 
   const MyAppBar({
     Key? key,
@@ -17,6 +18,7 @@ class MyAppBar extends StatefulWidget {
     required this.widthLogo,
     required this.heightLogo,
     required this.backgroundColor,
+    required this.registerFormKey,
     required this.maxWidth,
 
   }) : super(key: key);
@@ -31,10 +33,8 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
 
 
-    if (widget.maxWidth > 1200) {
+    if (widget.maxWidth >= 1200) {
       return _buildWideLayout();
-    // } else if (screenWidth > 600 && screenWidth <= 1200) {
-    //   return _buildSmallLayout();
     } else {
       return _buildSmallLayout();
     }
@@ -117,12 +117,15 @@ class _MyAppBarState extends State<MyAppBar> {
           const SizedBox(
             width: 90,
           ),
-          const Button(
+          Button(
             width: 180,
             height: 33,
             radius: 51,
             bgColor: "0xFFFFFFFF",
             label: "Đăng Ký Ngay",
+            onPressed: () => {
+              _scrollToPosition(widget.registerFormKey.currentContext!)
+            }
           ),
         ],
       ),
@@ -168,18 +171,29 @@ class _MyAppBarState extends State<MyAppBar> {
             ],
           ),
           const Spacer(),
-          const Button(
+          Button(
             width: 120,
             height: 25,
             radius: 51,
             bgColor: "0xFFFFFFFF",
             label: "Đăng Ký Ngay",
             labelSize: 12,
+            onPressed: () => {
+              _scrollToPosition(widget.registerFormKey.currentContext!)
+              }
           ),
         ],
       ),
     );
   }
     
+  void _scrollToPosition(BuildContext context) {
+    Scrollable.ensureVisible(
+      context,
+      duration: const Duration(
+        milliseconds: 500,
+      ),
+    );
+  }
     
 }

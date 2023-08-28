@@ -9,8 +9,10 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     if (maxWidth != null && maxWidth! > 800) {
       double scale = maxWidth! / 1440;
+      if (maxWidth! > 1440) {
+        scale = 1;
+      }
       return Container(
-        // padding: EdgeInsets.only(left: 72 * scale, right: 72 * scale),
         width: 540 * scale,
         height: 600 * scale,
         decoration: const BoxDecoration(
@@ -54,7 +56,7 @@ class Contact extends StatelessWidget {
                 style: TextStyle(
                   color: const Color(0xFFFFFFFF),
                   fontSize: 20 * scale,
-                  fontWeight: FontWeight.w100,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ),
@@ -83,9 +85,9 @@ class Contact extends StatelessWidget {
       );
     } else {
       return Container(
-        padding: const EdgeInsets.all(32),
-        width: 540,
-        height: 600,
+        padding: const EdgeInsets.all(30),
+        // width: 540,
+        // height: 600,
         decoration: const BoxDecoration(
           color: Color(0xFF0353CC),
           borderRadius: BorderRadius.all(
@@ -97,12 +99,12 @@ class Contact extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(
-              padding: EdgeInsets.only(left: 10),
+              padding: EdgeInsets.all(10),
               child: Text(
                 "THÔNG TIN LIÊN HỆ\n",
                 style: TextStyle(
                   color: Color(0xFFFFFFFF),
-                  fontSize: 36,
+                  fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -113,7 +115,7 @@ class Contact extends StatelessWidget {
                 "Adsota Agency",
                 style: TextStyle(
                   color: Color(0xFFFFFFFF),
-                  fontSize: 24,
+                  fontSize: 20,
                   fontWeight: FontWeight.w400,
                   height: 1.5,
                 ),
@@ -125,8 +127,8 @@ class Contact extends StatelessWidget {
                 "Appota Building, số 16 ngõ 71 Láng Hạ,\n quận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
                 style: TextStyle(
                   color: Color(0xFFFFFFFF),
-                  fontSize: 20,
-                  fontWeight: FontWeight.w100,
+                  fontSize: 18,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ),
@@ -138,11 +140,11 @@ class Contact extends StatelessWidget {
                     "Theo dõi chúng tôi tại",
                     style: TextStyle(
                       color: Color(0xFFFFFFFF),
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox( width: 10),
+                  const SizedBox( width: 8),
                   Image.asset(
                     "assets/images/contact.png",
                     fit: BoxFit.cover,

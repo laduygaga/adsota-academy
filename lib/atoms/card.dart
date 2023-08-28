@@ -40,13 +40,16 @@ class OTACard extends StatelessWidget{
             fit: BoxFit.cover,
           ),
           const SizedBox(height: 10),
-          Text(
-            content!,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: const Color(0xFF121825),
-              fontSize: 16 * scale! + 2,
-              fontWeight: FontWeight.w100,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16 * scale!),
+            child: Text(
+              content!,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: const Color(0xFF121825),
+                fontSize: 16 * scale! + 2,
+                fontWeight: FontWeight.normal,
+              ),
             ),
           ),
         ],

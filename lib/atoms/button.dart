@@ -14,7 +14,7 @@ class Button extends StatelessWidget {
   final double? iconHeight;
   final double? spaces;
   final String? bgColor;
-  final void Function()? onPressed;
+  final VoidCallback? onPressed;
 
   const Button(
       {Key? key,
@@ -38,7 +38,8 @@ class Button extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: Color(int.parse(bgColor!)),
+        color: bgColor != null ? Color(int.parse(bgColor!)) : null,
+
         borderRadius: BorderRadius.circular(radius!),
       ),
       child: TextButton(

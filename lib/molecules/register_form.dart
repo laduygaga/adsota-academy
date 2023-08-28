@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import '../atoms/form.dart';
 
 class RegistrationForm extends StatelessWidget{
-  final double? maxWidth;
-  const RegistrationForm({Key? key, this.maxWidth}) : super(key: key);
+  final double maxWidth;
+
+  const RegistrationForm({Key? key, required this.maxWidth}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (maxWidth != null && maxWidth! > 800) {
-      double scale = maxWidth! / 1440;
+    if (maxWidth > 800) {
+      double scale = maxWidth / 1440;
+      if (maxWidth > 1440) {
+        scale = 1;
+      }
       return Container(
         width: 540 * scale,
         height: 600 * scale,
@@ -35,17 +39,19 @@ class RegistrationForm extends StatelessWidget{
             SizedBox(
               width: 530 * scale,
               height: 500 * scale,
-              child: const OTAForm(),
+              child: OTAForm(
+                maxWidth: maxWidth),
             ),
           ],
         ),
       );
     } else {
-      return const Column(
+      return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
+          const SizedBox(height: 50),
+          const Text(
             "ĐĂNG KÝ NHẬN TƯ VẤN",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -54,10 +60,12 @@ class RegistrationForm extends StatelessWidget{
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           SizedBox(
-            child: OTAForm(),
+            child: OTAForm(
+              maxWidth: maxWidth),
           ),
+          const SizedBox(height: 30),
         ],
       );
     }

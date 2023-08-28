@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-import 'molecules/register_form.dart';
-import 'molecules/contact.dart';
 import 'molecules/after_course.dart';
 import 'molecules/orientation.dart';
 import 'molecules/course.dart';
 import 'molecules/teacher.dart';
 import 'molecules/intro.dart';
 import 'molecules/title.dart';
+import 'molecules/register_contact.dart';
 
 class MainContent extends StatelessWidget {
 
-  const MainContent({super.key});
+  final GlobalKey registerFormKey;
+
+  const MainContent({
+    Key? key,
+    required this.registerFormKey,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,65 +27,49 @@ class MainContent extends StatelessWidget {
 
   List<Widget> _buildContainer(BuildContext context) {
     List<Widget> children = [];
-    children.add(_buildTitle(context));
-    children.add(_buildIntro(context));
-    children.add(_buildTeacher(context));
-    children.add(_buildCourse(context));
-    children.add(_buildOrientation(context));
-    children.add(_buildAfterCourse(context));
-    children.add(_buildRegister(context));
+    children.add(_buildContent(context));
     return children;
   }
 
+  Widget _buildContent(BuildContext context) {
+    return Column(
+      children: [
+        _buildTitle(context),
+        _buildIntro(context),
+        _buildTeacher(context),
+        _buildCourse(context),
+        _buildOrientation(context),
+        _buildAfterCourse(context),
+        _buildRegister(context),
+      ],
+    );
+  }
+
   Widget _buildTitle(BuildContext context) {
-    bool isWide = MediaQuery.of(context).size.width >= 1440;
-    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1440;
-    return Container(
-      width: isWide ? 1440 : isNarrow ? 1200 : 600,
-      height: isWide ? 656 : isNarrow ? 456 : 720,
-      color: const Color(0xFF0353CC),
-      child: const OTATitle(),
+    return OTATitle(
+        registerFormKey: registerFormKey,
     );
   }
 
   Widget _buildIntro(BuildContext context)  {
-    bool isWide = MediaQuery.of(context).size.width > 1200;
-    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1200;
-    return Container(
-      width: isWide ? 1440 : isNarrow ? 1200 : 600,
-      height: isWide ? 384 : isNarrow ? 334 : 364,
-      color: const Color(0xFFFFFFFF),
-      child: const Intro(),
+    return const Intro(
     );
   }
 
   Widget _buildTeacher(BuildContext context)  {
-    double height;
-    double width;
     double maxWidth = MediaQuery.of(context).size.width;
-    if (maxWidth > 1440) {
-      maxWidth = 1440;
-    }
     double fontSize = 64 * maxWidth / 1440;
-    if (maxWidth < 600) {
-      height = 1900;
-      width = 352;
+    if (maxWidth <= 600) {
       fontSize = 38;
-    } else {
-      height = 1000 * maxWidth / 1440;
-      width = 1440 * maxWidth / 1440;
-    }
-    if (width > 1440) {
-      width = 1440;
     }
 
     return Container(
-      width: width,
-      height: height,
+      width: maxWidth,
       color: const Color(0xFFFFFFFF),
       child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(height: 32),
           Text.rich(
             TextSpan(
               text: "Đội ngũ giảng viên",
@@ -93,34 +81,33 @@ class MainContent extends StatelessWidget {
             ),
           ),
           SizedBox(height: 62 * maxWidth / 1440),
-          const Teacher(),
+          Teacher(
+            maxWidth: maxWidth,
+          ),
+          const SizedBox(height: 32),
         ],
       ),
     );
   }
 
   Widget _buildCourse(BuildContext context)  {
-    double height;
     double maxWidth = MediaQuery.of(context).size.width;
     double fontSize = 64 * maxWidth / 1440;
     if (maxWidth < 600) {
-      height = 650 * 2;
       fontSize = 32;
     } else {
-      height = 755 * maxWidth / 1440;
       fontSize = 48 * maxWidth / 1440;
-    }
-    if (maxWidth > 1440) {
-      maxWidth = 1440;
     }
     return Container(
       width: maxWidth,
-      height: height,
+      // height: height,
       color: const Color(0xFF0353CC),
       child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(height: 74 * maxWidth / 1440),
           Text.rich(
+            textAlign: TextAlign.center,
             TextSpan(
               text: "Các khóa học tại Adsota Academy",
               style: TextStyle(
@@ -131,92 +118,37 @@ class MainContent extends StatelessWidget {
             ),
           ),
           SizedBox(height: 74 * maxWidth / 1440),
-          const Course(),
+          Course(
+            maxWidth: maxWidth,
+            registerFormKey: registerFormKey,
+          ),
+          SizedBox(height: 94 * maxWidth / 1440),
         ],
       ),
     );
   }
 
   Widget _buildOrientation(BuildContext context) {
-    bool isWide = MediaQuery.of(context).size.width >= 1440;
-    bool isNarrow = MediaQuery.of(context).size.width > 600 && MediaQuery.of(context).size.width < 1440;
+    double maxWidth =  MediaQuery.of(context).size.width;
     return Container(
-      width: isWide ? 1440 : isNarrow ? 1200 : 600,
-      height: isWide ? 656 : isNarrow ? 456 : 700,
+      padding: const EdgeInsets.only(top: 59, bottom: 59),
+      width: maxWidth,
       color: const Color(0xFFE4EFFF),
-      child: const OTAOrientation(),
+      child: OTAOrientation(
+        maxWidth: maxWidth,
+      ),
     );
   }
 
   Widget _buildAfterCourse(BuildContext context) {
-    double height;
-    double maxWidth = MediaQuery.of(context).size.width;
-    if (maxWidth < 600) {
-      height = 1076 * 1.7;
-    } else {
-      height = 1076 * maxWidth / 1440;
-    }
-    if (maxWidth > 1440) {
-      maxWidth = 1440;
-      height = 1076;
-    }
-    return Container(
-      width: maxWidth,
-      height: height,
-      color: const Color(0xFFFFFFFF),
-      child: const AfterCourse(),
+    return const AfterCourse(
     );
   }
 
   Widget _buildRegister(BuildContext context) {
-    double height;
-    double maxWidth = MediaQuery.of(context).size.width;
-    if (maxWidth <= 800) {
-      height = 1076 * 1.7;
-    } else {
-      height = 700;
-    }
-    if (maxWidth >= 1440) {
-      maxWidth = 1440;
-    }
-    if (maxWidth > 800) {
-      return Container(
-        width: maxWidth,
-        height: height,
-        color: const Color(0xFFF8FBFF),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox( width: 55 * maxWidth / 1440),
-            RegistrationForm(maxWidth: maxWidth),
-            Contact(maxWidth: maxWidth),
-          ],
-        ),
-      );
-    } else {
-      return Container(
-        width: maxWidth,
-        height: height,
-        color: const Color(0xFFF8FBFF),
-        child: Center(
-          child: Container(
-            width: 600,
-            height: 1200,
-            decoration: BoxDecoration(
-              color: const Color(0xFFE0EDFF),
-              borderRadius: BorderRadius.circular(24),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RegistrationForm(maxWidth: maxWidth),
-                const SizedBox( height: 20),
-                const Contact(maxWidth: 600),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
+    return RegisterContact(
+      key: registerFormKey
+    );
   }
+
 }
