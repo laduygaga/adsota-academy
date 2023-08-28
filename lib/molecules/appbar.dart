@@ -119,7 +119,7 @@ class _MyAppBarState extends State<MyAppBar> {
           ),
           Button(
             width: 180,
-            height: 33,
+            height: 40,
             radius: 51,
             bgColor: "0xFFFFFFFF",
             label: "Đăng Ký Ngay",
@@ -173,7 +173,7 @@ class _MyAppBarState extends State<MyAppBar> {
           const Spacer(),
           Button(
             width: 120,
-            height: 25,
+            height: 35,
             radius: 51,
             bgColor: "0xFFFFFFFF",
             label: "Đăng Ký Ngay",

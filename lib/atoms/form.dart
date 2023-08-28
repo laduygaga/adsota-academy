@@ -141,7 +141,7 @@ void onPressedCallback(body) async {
                   labelColor: "0xFFFFFFFF",
                   radius: 51,
                   width: 480 * scale,
-                  height: 44 * scale,
+                  height: 40 * scale,
                   bgColor: "0xFF0353CC",
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
