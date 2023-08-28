@@ -101,6 +101,7 @@ class CourseTemplate extends StatelessWidget{
             scale: scale,
             courseImageRefer: courseImageRefer,
           ),
+          SizedBox(height: 60 * scale),
         ]
       );
     }
