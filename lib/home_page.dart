@@ -5,7 +5,9 @@ import 'main_content.dart';
 
 class MyHomePage extends StatelessWidget {
 
-  final registerFormKey = GlobalKey();
+  final registerFormKey1 = GlobalKey();
+  final registerFormKey2 = GlobalKey();
+  final registerFormKey3 = GlobalKey();
   MyHomePage({Key? key}) : super(key: key);
  
   @override
@@ -39,13 +41,17 @@ class MyHomePage extends StatelessWidget {
                 widthLogo: 29.73,
                 heightLogo: 46,
                 backgroundColor: "0xFF0353CC",
-                registerFormKey: registerFormKey,
+                registerFormKey: registerFormKey1,
               ),
             ),
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
-            sliver: MainContent(registerFormKey: registerFormKey),
+            sliver: MainContent(
+              registerFormKey1: registerFormKey1,
+              registerFormKey2: registerFormKey2,
+              registerFormKey3: registerFormKey3,
+            ),
           ),
         ],
       ),
@@ -70,13 +76,17 @@ class MyHomePage extends StatelessWidget {
                 widthLogo: 29.73,
                 heightLogo: 46,
                 backgroundColor: "0xFF0353CC",
-                registerFormKey: registerFormKey,
+                registerFormKey: registerFormKey1,
               ),
             ),
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
-            sliver: MainContent(registerFormKey: registerFormKey),
+            sliver: MainContent(
+              registerFormKey1: registerFormKey1,
+              registerFormKey2: registerFormKey2,
+              registerFormKey3: registerFormKey3,
+            ),
           ),
         ],
       ),
@@ -96,7 +106,7 @@ class MyHomePage extends StatelessWidget {
           widthLogo: 29.73,
           heightLogo: 46,
           backgroundColor: "0xFF0353CC",
-          registerFormKey: registerFormKey,
+          registerFormKey: registerFormKey1,
         ),
       ),
       drawer: Drawer(
@@ -166,7 +176,11 @@ class MyHomePage extends StatelessWidget {
         slivers: [
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
-            sliver: MainContent(registerFormKey: registerFormKey),
+            sliver: MainContent(
+              registerFormKey1: registerFormKey1,
+              registerFormKey2: registerFormKey2,
+              registerFormKey3: registerFormKey3,
+            ),
           ),
         ],
       ),

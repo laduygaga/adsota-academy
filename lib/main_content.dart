@@ -9,11 +9,15 @@ import 'molecules/register_contact.dart';
 
 class MainContent extends StatelessWidget {
 
-  final GlobalKey registerFormKey;
+  final GlobalKey registerFormKey1;
+  final GlobalKey registerFormKey2;
+  final GlobalKey registerFormKey3;
 
   const MainContent({
     Key? key,
-    required this.registerFormKey,
+    required this.registerFormKey1,
+    required this.registerFormKey2,
+    required this.registerFormKey3,
   }) : super(key: key);
 
   @override
@@ -47,7 +51,7 @@ class MainContent extends StatelessWidget {
 
   Widget _buildTitle(BuildContext context) {
     return OTATitle(
-        registerFormKey: registerFormKey,
+        registerFormKey: registerFormKey1,
     );
   }
 
@@ -120,7 +124,8 @@ class MainContent extends StatelessWidget {
           SizedBox(height: 74 * maxWidth / 1440),
           Course(
             maxWidth: maxWidth,
-            registerFormKey: registerFormKey,
+            registerFormKey2: registerFormKey2,
+            registerFormKey3: registerFormKey3,
           ),
           SizedBox(height: 94 * maxWidth / 1440),
         ],
@@ -147,7 +152,7 @@ class MainContent extends StatelessWidget {
 
   Widget _buildRegister(BuildContext context) {
     return RegisterContact(
-      key: registerFormKey
+      key: registerFormKey1
     );
   }
 
