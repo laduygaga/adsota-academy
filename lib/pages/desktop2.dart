@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../molecules/appbar.dart';
@@ -184,22 +183,24 @@ class MainContent extends StatelessWidget {
         scale: scale,
         title1: "TỔNG QUAN VỀ KHÓA HỌC\n",
         title2: "BRANDING - MARKETING\n",
-        summaryContent: "Khóa học giới thiệu những kiến thức cơ bản về thương hiệu: Khái niệm,\nbản chất, đặc tính, định vị thương hiệu trên thị trường.\n\nKhóa học tập trung trang bị cho người học những mô hình có tính nguyên\ntắc với việc xây dựng, phát triển thương hiệu và giá trị của thương hiệu\ntrên thị trường.\n\nCung cấp tư duy hiện đại về quản trị thương hiệu, hình ảnh của công ty\nqua thương hiệu và khả năng ra quyết định về marketing liên quan đến\nthương hiệu.",
-        avatar: "assets/images/Chị Hoàng Thảo Anh - CMO Adsota Agency 1.png",
-        name: "Chị Hoàng Thảo Anh",
-        role: "CMO Adsota",
+        summaryContent: "Khóa học giới thiệu những kiến thức cơ bản về thương hiệu: Khái niệm, bản chất, đặc tính, định vị thương hiệu trên thị trường.\n\nKhóa học tập trung trang bị cho người học những mô hình có tính nguyên tắc với việc xây dựng, phát triển thương hiệu và giá trị của thương hiệu trên thị trường.\n\nCung cấp tư duy hiện đại về quản trị thương hiệu, hình ảnh của công ty qua thương hiệu và khả năng ra quyết định về marketing liên quan đến thương hiệu.",
+        avatar1: "assets/images/Chị Hoàng Thảo Anh - CMO Adsota Agency 1.png",
+        name1: "Chị Hoàng Thảo Anh",
+        role1: "CMO Adsota",
         courseImage: "assets/images/branding-marketing-big.png",
         courseImageRefer: "assets/images/digital-mkt-3.png",
         courseContentTitle1: "Buổi 1",
         courseContentTitle2: "Buổi 2",
         courseContentTitle3: "Buổi 3",
-        courseContent1: "",
+        courseContent1: "\u2022 Tại sao phải làm thương hiệu?\n\u2022 Thương hiệu thật sự là gì?\n\u2022 Điều gì cấu thành nên thương hiệu?",
         courseContent2: "\u2022 Làm thế nào để xây dựng thương hiệu?\n\u2022 Xây dựng các điểm chạm thương hiệu như thế nào? \n\u2022 Làm sao để xác định chân dung khách hàng và nhu cầu của họ?",
-        courseContent3: "\u2022 Làm thế nào để xây dựng thương hiệu?\n\u2022 Xây dựng các điểm chạm thương hiệu như thế nào?\n\u2022 Làm sao để xác định chân dung khách hàng và nhu cầu của họ?",
+        courseContent3: "\u2022 Làm sao xác định đúng vấn đề của thương hiệu?\n\u2022 Phương pháp truyền thông thương hiệu?\n\u2022 Case studies của bạn",
         courseValueTitle1: "Nắm vững nội dung quản trị thương hiệu",
         courseValueTitle2: "Biết cách đánh giá các nội dung quản trị một thương hiệu cụ thể ",
-        courseValueContent1: "\u2022 Bản chất khái niệm, vai trò ý nghĩa của thương hiệu trong kinh doanh\n\u2022 Quy trình xây dựng, khai thác, duy trì và phát triển, thương hiệu\n  - Xác định giá trị cốt lõi và lựa chọn chiến lược định vị thương hiệu\n  - Thiết kế thương hiệu, hoạch định và triển khai các chương trình marketing xây dựng thương hiệu.\n  - Theo dõi sức mạnh thương hiệu, đo lường giá trị tài sản thương hiệu\n  - Duy trì, khai thác, bảo vệ và mở rộng thương hiệu.",
-        courseValueContent2: "\u2022 Sự phù hợp chiến lược thương hiệu với mục tiêu kinh doanh và cơ hội thị trường.\n \u2022 Tính nhất quán và hiệu quả của các hoạt động xây dựng và phát triển thương hiệu.\n\u2022 kết quả, thành tích thương hiệu đạt được từ góc độ thị trường và tài chính.",
+        courseValueContent1: "\u2022 Bản chất khái niệm, vai trò ý nghĩa của thương hiệu trong kinh doanh\n\u2022 Quy trình xây dựng, khai thác, duy trì và phát triển, thương hiệu\n",
+        courseValueSubContent1: " - Xác định giá trị cốt lõi và lựa chọn chiến lược định vị thương hiệu\n  - Thiết kế thương hiệu, hoạch định và triển khai các chương trình marketing xây dựng thương hiệu.\n  - Theo dõi sức mạnh thương hiệu, đo lường giá trị tài sản thương hiệu\n  - Duy trì, khai thác, bảo vệ và mở rộng thương hiệu.",
+        courseValueContent2: "\u2022 Sự phù hợp chiến lược thương hiệu với mục tiêu kinh doanh và cơ hội thị trường.\n \u2022 Tính nhất quán và hiệu quả của các hoạt động xây dựng và phát triển thương hiệu.\n\u2022 Kết quả, thành tích thương hiệu đạt được từ góc độ thị trường và tài chính.",
+        courseValueSubContent2: "",
       ),
     );
   }

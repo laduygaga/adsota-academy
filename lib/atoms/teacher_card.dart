@@ -94,6 +94,25 @@ class TeacherCardState extends State<TeacherCard> {
               ),
             ),
 
+          // if screenwith < 600, always show arrow
+          if (MediaQuery.of(context).size.width <= 600)
+            Positioned(
+              bottom: widget.scale! > 600/1440?  (-120) * widget.scale! :  -MediaQuery.of(context).size.height /2,
+              left: 0,
+              right: 0,
+              child: InkWell(
+                child: const SizedBox(
+                  child: Image(
+                    image: AssetImage('assets/images/arrow_up.png'),
+                  ),
+                ),
+                onTap: () {
+                  setState(() {
+                    isTapped = true;
+                  });
+                },
+              ),
+            ),
         ],
       ),
     );

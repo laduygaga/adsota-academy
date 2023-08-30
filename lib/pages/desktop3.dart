@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../molecules/appbar.dart';
@@ -182,15 +181,18 @@ class MainContent extends StatelessWidget {
       scale: scale,
       title1: "TỔNG QUAN VỀ KHÓA HỌC\n",
       title2: "DIGITAL MARKETING\n",
-      summaryContent: "Khóa học giới thiệu những kiến thức cơ bản về Digital Marketing, bản chất của\ncác nền tảng số ứng dụng trong hoạt động marketing.\n\nBên cạnh đó, khóa học cung cấp cho người học phương pháp xây dựng và\nthực thi chiến dịch quảng cáo một cách hiệu quả, phù hợp cho thương hiệu.",
-      avatar: "assets/images/anh-dang-phu-vinh-ceo-adsota.png",
-      name: "Anh Đặng Phú Vinh",
-      role: "CEO Adsota",
+      summaryContent: "Khóa học giới thiệu những kiến thức cơ bản về Digital Marketing, bản chất của các nền tảng số ứng dụng trong hoạt động marketing.\n\nBên cạnh đó, khóa học cung cấp cho người học phương pháp xây dựng và thực thi chiến dịch quảng cáo một cách hiệu quả, phù hợp cho thương hiệu.",
+      avatar1: "assets/images/anh-dang-phu-vinh-ceo-adsota.png",
+      avatar2: "assets/images/the-long-manager-adsota.png",
+      name1: "Anh Đặng Phú Vinh",
+      role1: "CEO Adsota",
+      name2: "Anh Lương Thế Long",
+      role2: "Digital Marketing Manager Adsota",
       courseImage: "assets/images/digital-marketing-big.png",
       courseImageRefer: "assets/images/branding-mkt-3.png",
       courseContentTitle1: "Buổi 1: Tổng quan về Digital Marketing",
       courseContentTitle2: "Buổi 2: Performance Marketing",
-      courseContentTitle3: "Buổi 3",
+      courseContentTitle3: "",
       courseContent1: "\u2022 Digital Marketing là gì?\n\u2022 Lợi ích của việc ứng dụng Digital Marketing?\n\u2022 Vị trí của Digital Marketing trong chiến lược Marketing tổng thể và xây dựng thương hiệu?",
       courseContent2: "\u2022 Performance Marketing là gì?\n\u2022 Có những công cụ phương pháp nào để giải quyết Performance Marketing?\n\u2022 Chạy quảng cáo là gì, trên các nền tảng nào? Chạy quảng cáo giải quyết những vấn đề gì của doanh nghiệp?\n\u2022 Làm sao để chạy quảng cáo tốt? Ai có thể chạy quảng cáo?\n\u2022 Demo chạy quảng cáo",
       courseContent3: "",

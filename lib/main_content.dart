@@ -12,12 +12,22 @@ class MainContent extends StatelessWidget {
   final GlobalKey registerFormKey1;
   final GlobalKey registerFormKey2;
   final GlobalKey registerFormKey3;
+  final GlobalKey titleKey1;
+  final GlobalKey introKey1;
+  final GlobalKey teacherKey1;
+  final GlobalKey courseKey1;
+  final GlobalKey orientationKey1;
 
   const MainContent({
     Key? key,
     required this.registerFormKey1,
     required this.registerFormKey2,
     required this.registerFormKey3,
+    required this.titleKey1,
+    required this.introKey1,
+    required this.teacherKey1,
+    required this.courseKey1,
+    required this.orientationKey1,
   }) : super(key: key);
 
   @override
@@ -51,23 +61,29 @@ class MainContent extends StatelessWidget {
 
   Widget _buildTitle(BuildContext context) {
     return OTATitle(
+        key: titleKey1,
         registerFormKey: registerFormKey1,
     );
   }
 
   Widget _buildIntro(BuildContext context)  {
-    return const Intro(
+    return Intro(
+      key: introKey1,
     );
   }
 
   Widget _buildTeacher(BuildContext context)  {
     double maxWidth = MediaQuery.of(context).size.width;
     double fontSize = 64 * maxWidth / 1440;
+    if (fontSize > 64) {
+      fontSize = 64;
+    }
     if (maxWidth <= 600) {
       fontSize = 38;
     }
 
     return Container(
+      key: teacherKey1,
       width: maxWidth,
       color: const Color(0xFFFFFFFF),
       child:  Column(
@@ -84,7 +100,7 @@ class MainContent extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 62 * maxWidth / 1440),
+          SizedBox(height: maxWidth / 1440 <= 1? 62 * maxWidth / 1440 : 62),
           Teacher(
             maxWidth: maxWidth,
           ),
@@ -102,14 +118,17 @@ class MainContent extends StatelessWidget {
     } else {
       fontSize = 48 * maxWidth / 1440;
     }
+    if (fontSize > 64) {
+      fontSize = 64;
+    }
     return Container(
+      key: courseKey1,
       width: maxWidth,
-      // height: height,
       color: const Color(0xFF0353CC),
       child:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 74 * maxWidth / 1440),
+          SizedBox(height: maxWidth / 1440 <= 1? 74 * maxWidth / 1440 : 74),
           Text.rich(
             textAlign: TextAlign.center,
             TextSpan(
@@ -121,13 +140,13 @@ class MainContent extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 74 * maxWidth / 1440),
+          SizedBox(height: maxWidth / 1440 <= 1? 74 * maxWidth / 1440 : 74),
           Course(
             maxWidth: maxWidth,
             registerFormKey2: registerFormKey2,
             registerFormKey3: registerFormKey3,
           ),
-          SizedBox(height: 94 * maxWidth / 1440),
+          SizedBox(height: maxWidth / 1440 <= 1? 94 * maxWidth / 1440 : 94),
         ],
       ),
     );
@@ -136,6 +155,7 @@ class MainContent extends StatelessWidget {
   Widget _buildOrientation(BuildContext context) {
     double maxWidth =  MediaQuery.of(context).size.width;
     return Container(
+      key: orientationKey1,
       padding: const EdgeInsets.only(top: 59, bottom: 59),
       width: maxWidth,
       color: const Color(0xFFE4EFFF),

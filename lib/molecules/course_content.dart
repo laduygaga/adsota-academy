@@ -5,19 +5,19 @@ class CourseContent extends StatelessWidget{
   final double scale;
   final String courseContentTitle1;
   final String courseContentTitle2;
-  final String courseContentTitle3;
+  final String? courseContentTitle3;
   final String courseContent1;
   final String courseContent2;
-  final String courseContent3;
+  final String? courseContent3;
   const CourseContent({
     Key? key,
     required this.scale,
     required this.courseContentTitle1,
     required this.courseContentTitle2,
-    required this.courseContentTitle3,
+    this.courseContentTitle3,
     required this.courseContent1,
     required this.courseContent2,
-    required this.courseContent3,
+    this.courseContent3,
   }) : super(key: key);
 
   @override
@@ -51,6 +51,7 @@ class CourseContent extends StatelessWidget{
                 courseContent: courseContent2,
               ),
               SizedBox(height: 21 * scale),
+              if (courseContentTitle3 != null && courseContent3 != null)
               CourseContentForm(
                 scale: scale,
                 title: courseContentTitle3,
@@ -91,6 +92,7 @@ class CourseContent extends StatelessWidget{
                   courseContent: courseContent2,
                 ),
                 const SizedBox(height: 21),
+                if (courseContentTitle3 != null && courseContent3 != null)
                 CourseContentForm(
                   scale: 0.7,
                   title: courseContentTitle3,

@@ -134,7 +134,7 @@ void onPressedCallback(body) async {
                     return null;
                   },
                 ),
-                SizedBox(height: 16 * scale),
+                SizedBox(height: 40 * scale),
                 Button(
                   label: 'Đăng Ký Ngay',
                   labelSize: 14,

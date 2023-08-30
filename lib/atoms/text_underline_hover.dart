@@ -4,11 +4,13 @@ class UnderlinedTextWithHover extends StatefulWidget {
   final String text;
   final TextStyle style;
   final double underlinePadding;
+  final VoidCallback? onPress;
 
   const UnderlinedTextWithHover({
     Key? key,
     required this.text,
     required this.style,
+    this.onPress,
     this.underlinePadding = 2.0,
   }) : super(key: key);
 
@@ -32,22 +34,25 @@ class _UnderlinedTextWithHoverState extends State<UnderlinedTextWithHover> {
           _isHovering = false;
         });
       },
-      child: Container(
-        padding: EdgeInsets.only(bottom: widget.underlinePadding),
-        decoration: _isHovering
-            ? BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Colors.white,
-                    width: widget.style.decorationThickness ?? 1.0,
+      child: GestureDetector(
+        onTap: widget.onPress,
+        child: Container(
+          padding: EdgeInsets.only(bottom: widget.underlinePadding),
+          decoration: _isHovering
+              ? BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: Colors.white,
+                      width: widget.style.decorationThickness ?? 1.0,
+                    ),
                   ),
-                ),
-              )
-            : null,
-        child: Text(
-          widget.text,
-          style: widget.style.copyWith(
-            decoration: TextDecoration.none,
+                )
+              : null,
+          child: Text(
+            widget.text,
+            style: widget.style.copyWith(
+              decoration: TextDecoration.none,
+            ),
           ),
         ),
       ),

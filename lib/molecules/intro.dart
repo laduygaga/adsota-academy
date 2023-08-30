@@ -20,9 +20,9 @@ class Intro extends StatelessWidget{
     double leftPadding = 16;
     double rightPadding = 16;
     return Container(
-      width: isWide ? 1440 : isNarrow ? 1200 : 600,
+      width: maxWidth,
       height: isWide ? 384 : isNarrow ? 334 : 364,
-      color: const Color(0xFFFFFFFF),
+      color: const Color(0xFFEFF5F9),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +35,6 @@ class Intro extends StatelessWidget{
                 color: const Color(0xFF121825),
                 fontSize: titleFontSize,
                 fontWeight: FontWeight.bold,
-                height: 1.8,
               ),
               children: <TextSpan>[
                 TextSpan(
@@ -44,13 +43,12 @@ class Intro extends StatelessWidget{
                     color: const Color(0xFF0353CC),
                     fontSize: titleFontSize,
                     fontWeight: FontWeight.bold,
-                    height: 1.8,
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: isWide ? 48 : isNarrow ? 32 : 24),
+          SizedBox(height: isWide ? 44.5: isNarrow ? 32 : 24),
           Padding(
             padding: EdgeInsets.only(left: leftPadding, right: rightPadding),
             child: Text(

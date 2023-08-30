@@ -44,7 +44,7 @@ class Contact extends StatelessWidget {
                 style: TextStyle(
                   color: const Color(0xFFFFFFFF),
                   fontSize: 24 * scale,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w800,
                   height: 1.5,
                 ),
               ),
@@ -52,11 +52,11 @@ class Contact extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 80 * scale),
               child: Text(
-                "Appota Building, số 16 ngõ 71 Láng Hạ,\n quận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
+                "Appota Building, số 16 ngõ 71 Láng Hạ,\nquận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
                 style: TextStyle(
                   color: const Color(0xFFFFFFFF),
                   fontSize: 20 * scale,
-                  fontWeight: FontWeight.normal,
+                  fontWeight: FontWeight.w300,
                 ),
               ),
             ),
@@ -86,8 +86,6 @@ class Contact extends StatelessWidget {
     } else {
       return Container(
         padding: const EdgeInsets.all(30),
-        // width: 540,
-        // height: 600,
         decoration: const BoxDecoration(
           color: Color(0xFF0353CC),
           borderRadius: BorderRadius.all(
@@ -124,7 +122,7 @@ class Contact extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
-                "Appota Building, số 16 ngõ 71 Láng Hạ,\n quận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
+                "Appota Building, số 16 ngõ 71 Láng Hạ,\nquận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
                 style: TextStyle(
                   color: Color(0xFFFFFFFF),
                   fontSize: 18,
@@ -133,7 +131,7 @@ class Contact extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Row(
                 children: [
                   const Text(

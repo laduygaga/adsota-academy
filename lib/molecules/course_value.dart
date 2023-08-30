@@ -6,6 +6,8 @@ class CourseValue extends StatelessWidget {
   final String courseValueTitle2;
   final String courseValueContent1;
   final String courseValueContent2;
+  final String? courseValueSubContent1;
+  final String? courseValueSubContent2;
   const CourseValue({
     Key? key,
     required this.scale,
@@ -13,29 +15,32 @@ class CourseValue extends StatelessWidget {
     required this.courseValueTitle2,
     required this.courseValueContent1,
     required this.courseValueContent2,
+    this.courseValueSubContent1,
+    this.courseValueSubContent2,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     if (scale > 890/1200) {
-      return Container(
-        padding: const EdgeInsets.only(left: 16, right: 16),
-        width: 1200 * scale,
+    return Container(
+      padding: const EdgeInsets.only(left: 16, right: 16),
+      width: 1200 * scale,
+      child: IntrinsicHeight(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: DecoratedBox(
-                decoration: const BoxDecoration(
-                  color: Color(0xffFACB28),
-                ),
+              child: Container(
+                color: const Color(0xffFACB28),
                 child: SizedBox(
-                  width: 610 * scale,
-                  height: 646 * scale,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 130 * scale, top: 66 * scale),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 120 * scale,
+                      vertical: 66 * scale,
+                    ),
                     child: const Text(
-                      'Sau khi học xong,\nngười học sẽ:',
+                      'Sau khi học xong, người học sẽ:',
                       style: TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
@@ -54,6 +59,7 @@ class CourseValue extends StatelessWidget {
                     0,
                     courseValueTitle1,
                     courseValueContent1,
+                    courseValueSubContent1,
                     0xFFFFF6D7,
                   ),
                   _buildCourseValueWidget(
@@ -61,12 +67,14 @@ class CourseValue extends StatelessWidget {
                     0,
                     courseValueTitle2,
                     courseValueContent2,
+                    courseValueSubContent2,
                     0xFFFFFCF1,
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
       } else {
@@ -84,7 +92,7 @@ class CourseValue extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 130 * scale, top: 74 * scale, bottom: 74 * scale),
                   child: const Text(
-                    'Sau khi học xong,\nngười học sẽ:',
+                    'Sau khi học xong, người học sẽ:',
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
@@ -102,6 +110,7 @@ class CourseValue extends StatelessWidget {
                 16,
                 courseValueTitle1,
                 courseValueContent1,
+                courseValueSubContent1,
                 0xFFFFF6D7,
               ),
               _buildCourseValueWidget(
@@ -109,6 +118,7 @@ class CourseValue extends StatelessWidget {
                 16,
                 courseValueTitle2,
                 courseValueContent2,
+                courseValueSubContent2,
                 0xFFFFFCF1,
               ),
             ],
@@ -123,6 +133,7 @@ class CourseValue extends StatelessWidget {
     double margin,
     String title,
     String content,
+    String? subContent,
     int backgroundColor,
   ) {
     return Card(
@@ -161,12 +172,25 @@ class CourseValue extends StatelessWidget {
               ),
             ),
             SizedBox(height: 14 * scale),
-            Text(
-              content,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Color(0xff121825),
+            Text.rich(
+              TextSpan(
+                text: content,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff121825),
+                ),
+                children: [
+                  if (subContent != null)
+                    TextSpan(
+                      text: subContent,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300,
+                        color: Color(0xff121825),
+                      ),
+                    ),
+                ],
               ),
             ),
           ],

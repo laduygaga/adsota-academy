@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import 'molecules/appbar.dart';
 import 'main_content.dart';
 
@@ -8,6 +9,11 @@ class MyHomePage extends StatelessWidget {
   final registerFormKey1 = GlobalKey();
   final registerFormKey2 = GlobalKey();
   final registerFormKey3 = GlobalKey();
+  final titleKey1 = GlobalKey();
+  final introKey1 = GlobalKey();
+  final teacherKey1 = GlobalKey();
+  final courseKey1 = GlobalKey();
+  final orientationKey1 = GlobalKey();
   MyHomePage({Key? key}) : super(key: key);
  
   @override
@@ -17,7 +23,7 @@ class MyHomePage extends StatelessWidget {
           if (constraints.maxWidth > 1200) {
             return _buildWideLayout();
           } else {
-            return _buildSmallLayout();
+            return _buildSmallLayout(context);
           }
         },
     );
@@ -42,6 +48,11 @@ class MyHomePage extends StatelessWidget {
                 heightLogo: 46,
                 backgroundColor: "0xFF0353CC",
                 registerFormKey: registerFormKey1,
+                titleKey1: titleKey1,
+                introKey1: introKey1,
+                teacherKey1    : teacherKey1,
+                courseKey1     : courseKey1,
+                orientationKey1: orientationKey1,
               ),
             ),
           ),
@@ -51,6 +62,11 @@ class MyHomePage extends StatelessWidget {
               registerFormKey1: registerFormKey1,
               registerFormKey2: registerFormKey2,
               registerFormKey3: registerFormKey3,
+              titleKey1: titleKey1,
+              introKey1: introKey1,
+              teacherKey1    : teacherKey1,
+              courseKey1     : courseKey1,
+              orientationKey1: orientationKey1,
             ),
           ),
         ],
@@ -86,6 +102,11 @@ class MyHomePage extends StatelessWidget {
               registerFormKey1: registerFormKey1,
               registerFormKey2: registerFormKey2,
               registerFormKey3: registerFormKey3,
+              titleKey1: titleKey1,
+              introKey1: introKey1,
+              teacherKey1    : teacherKey1,
+              courseKey1     : courseKey1,
+              orientationKey1: orientationKey1,
             ),
           ),
         ],
@@ -93,7 +114,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildSmallLayout() {
+  Widget _buildSmallLayout(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(int.parse("0xFF0353CC")),
@@ -107,6 +128,7 @@ class MyHomePage extends StatelessWidget {
           heightLogo: 46,
           backgroundColor: "0xFF0353CC",
           registerFormKey: registerFormKey1,
+          titleKey1: titleKey1,
         ),
       ),
       drawer: Drawer(
@@ -147,25 +169,29 @@ class MyHomePage extends StatelessWidget {
             ListTile(
               title: const Text("Giới Thiệu"),
               onTap: () {
-                // Handle drawer item tap
+                _scrollToPosition(introKey1.currentContext!);
+                Navigator.pop(context);
               },
             ),
             ListTile(
               title: const Text("Đội Ngũ Giảng Viên"),
               onTap: () {
-                // Handle drawer item tap
+                _scrollToPosition(teacherKey1.currentContext!);
+                Navigator.pop(context);
               },
             ),
             ListTile(
               title: const Text("Khóa học"),
               onTap: () {
-                // Handle drawer item tap
+                _scrollToPosition(courseKey1.currentContext!);
+                Navigator.pop(context);
               },
             ),
             ListTile(
               title: const Text("Khóa học dành cho ai"),
               onTap: () {
-                // Handle drawer item tap
+                _scrollToPosition(orientationKey1.currentContext!);
+                Navigator.pop(context);
               },
             ),
             // Add more drawer items as needed
@@ -180,6 +206,11 @@ class MyHomePage extends StatelessWidget {
               registerFormKey1: registerFormKey1,
               registerFormKey2: registerFormKey2,
               registerFormKey3: registerFormKey3,
+              titleKey1: titleKey1,
+              introKey1: introKey1,
+              teacherKey1    : teacherKey1,
+              courseKey1     : courseKey1,
+              orientationKey1: orientationKey1,
             ),
           ),
         ],
@@ -187,4 +218,12 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
+  void _scrollToPosition(BuildContext context) {
+    Scrollable.ensureVisible(
+      context,
+      duration: const Duration(
+        milliseconds: 500,
+      ),
+    );
+  }
 }

@@ -12,7 +12,9 @@ class RegisterContact extends StatelessWidget {
     double maxWidth = MediaQuery.of(context).size.width;
     if (maxWidth > 800) {
       return Container(
-        padding: EdgeInsets.only(top: 111 * maxWidth / 1440, bottom: 111 * maxWidth / 1440),
+        padding: EdgeInsets.only(
+          top: maxWidth / 1440 <= 1? 111 * maxWidth / 1440 : 94,
+          bottom: maxWidth / 1440 <= 1? 111 * maxWidth / 1440 : 94,),
         width: maxWidth,
         color: const Color(0xFFF8FBFF),
         child: SizedBox(
