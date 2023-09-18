@@ -90,7 +90,10 @@ class CourseValue extends StatelessWidget {
               child: SizedBox(
                 width: scale * 1200 - 30,
                 child: Padding(
-                  padding: EdgeInsets.only(left: 130 * scale, top: 74 * scale, bottom: 74 * scale),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 120 * scale,
+                    vertical: 66 * scale,
+                  ),
                   child: const Text(
                     'Sau khi học xong, người học sẽ:',
                     style: TextStyle(

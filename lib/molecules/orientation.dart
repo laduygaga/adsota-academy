@@ -45,7 +45,7 @@ class OTAOrientation extends StatelessWidget{
                   ),
                   children: <TextSpan>[
                     TextSpan(
-                      text: "mong muốn cải thiện tư duy marketing",
+                      text: " mong muốn cải thiện tư duy marketing",
                       style: TextStyle(
                         color: const Color(0xFF121825),
                         fontSize: contentFontSize,

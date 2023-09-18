@@ -9,25 +9,21 @@ import 'molecules/register_contact.dart';
 
 class MainContent extends StatelessWidget {
 
-  final GlobalKey registerFormKey1;
-  final GlobalKey registerFormKey2;
-  final GlobalKey registerFormKey3;
-  final GlobalKey titleKey1;
-  final GlobalKey introKey1;
-  final GlobalKey teacherKey1;
-  final GlobalKey courseKey1;
-  final GlobalKey orientationKey1;
+  final GlobalKey registerFormKey;
+  final GlobalKey titleKey;
+  final GlobalKey introKey;
+  final GlobalKey teacherKey;
+  final GlobalKey courseKey;
+  final GlobalKey orientationKey;
 
   const MainContent({
     Key? key,
-    required this.registerFormKey1,
-    required this.registerFormKey2,
-    required this.registerFormKey3,
-    required this.titleKey1,
-    required this.introKey1,
-    required this.teacherKey1,
-    required this.courseKey1,
-    required this.orientationKey1,
+    required this.registerFormKey,
+    required this.titleKey,
+    required this.introKey,
+    required this.teacherKey,
+    required this.courseKey,
+    required this.orientationKey,
   }) : super(key: key);
 
   @override
@@ -61,14 +57,14 @@ class MainContent extends StatelessWidget {
 
   Widget _buildTitle(BuildContext context) {
     return OTATitle(
-        key: titleKey1,
-        registerFormKey: registerFormKey1,
+        key: titleKey,
+        registerFormKey: registerFormKey,
     );
   }
 
   Widget _buildIntro(BuildContext context)  {
     return Intro(
-      key: introKey1,
+      key: introKey,
     );
   }
 
@@ -83,7 +79,7 @@ class MainContent extends StatelessWidget {
     }
 
     return Container(
-      key: teacherKey1,
+      key: teacherKey,
       width: maxWidth,
       color: const Color(0xFFFFFFFF),
       child:  Column(
@@ -122,7 +118,7 @@ class MainContent extends StatelessWidget {
       fontSize = 64;
     }
     return Container(
-      key: courseKey1,
+      key: courseKey,
       width: maxWidth,
       color: const Color(0xFF0353CC),
       child:  Column(
@@ -143,8 +139,6 @@ class MainContent extends StatelessWidget {
           SizedBox(height: maxWidth / 1440 <= 1? 74 * maxWidth / 1440 : 74),
           Course(
             maxWidth: maxWidth,
-            registerFormKey2: registerFormKey2,
-            registerFormKey3: registerFormKey3,
           ),
           SizedBox(height: maxWidth / 1440 <= 1? 94 * maxWidth / 1440 : 94),
         ],
@@ -155,7 +149,7 @@ class MainContent extends StatelessWidget {
   Widget _buildOrientation(BuildContext context) {
     double maxWidth =  MediaQuery.of(context).size.width;
     return Container(
-      key: orientationKey1,
+      key: orientationKey,
       padding: const EdgeInsets.only(top: 59, bottom: 59),
       width: maxWidth,
       color: const Color(0xFFE4EFFF),
@@ -172,7 +166,7 @@ class MainContent extends StatelessWidget {
 
   Widget _buildRegister(BuildContext context) {
     return RegisterContact(
-      key: registerFormKey1
+      key: registerFormKey
     );
   }
 

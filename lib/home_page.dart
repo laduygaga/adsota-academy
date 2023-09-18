@@ -6,14 +6,12 @@ import 'main_content.dart';
 
 class MyHomePage extends StatelessWidget {
 
-  final registerFormKey1 = GlobalKey();
-  final registerFormKey2 = GlobalKey();
-  final registerFormKey3 = GlobalKey();
-  final titleKey1 = GlobalKey();
-  final introKey1 = GlobalKey();
-  final teacherKey1 = GlobalKey();
-  final courseKey1 = GlobalKey();
-  final orientationKey1 = GlobalKey();
+  final registerFormKey = GlobalKey();
+  final titleKey = GlobalKey();
+  final introKey = GlobalKey();
+  final teacherKey = GlobalKey();
+  final courseKey = GlobalKey();
+  final orientationKey = GlobalKey();
   MyHomePage({Key? key}) : super(key: key);
  
   @override
@@ -34,6 +32,7 @@ class MyHomePage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: false,
             forceElevated: true,
             shadowColor: Colors.black,
             collapsedHeight: 78,
@@ -47,26 +46,23 @@ class MyHomePage extends StatelessWidget {
                 widthLogo: 29.73,
                 heightLogo: 46,
                 backgroundColor: "0xFF0353CC",
-                registerFormKey: registerFormKey1,
-                titleKey1: titleKey1,
-                introKey1: introKey1,
-                teacherKey1    : teacherKey1,
-                courseKey1     : courseKey1,
-                orientationKey1: orientationKey1,
+                registerFormKey: registerFormKey,
+                introKey: introKey,
+                teacherKey    : teacherKey,
+                courseKey     : courseKey,
+                orientationKey: orientationKey,
               ),
             ),
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
             sliver: MainContent(
-              registerFormKey1: registerFormKey1,
-              registerFormKey2: registerFormKey2,
-              registerFormKey3: registerFormKey3,
-              titleKey1: titleKey1,
-              introKey1: introKey1,
-              teacherKey1    : teacherKey1,
-              courseKey1     : courseKey1,
-              orientationKey1: orientationKey1,
+              registerFormKey: registerFormKey,
+              titleKey: titleKey,
+              introKey: introKey,
+              teacherKey    : teacherKey,
+              courseKey     : courseKey,
+              orientationKey: orientationKey,
             ),
           ),
         ],
@@ -79,6 +75,7 @@ class MyHomePage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: false,
             forceElevated: true,
             shadowColor: Colors.black,
             collapsedHeight: 78,
@@ -92,21 +89,19 @@ class MyHomePage extends StatelessWidget {
                 widthLogo: 29.73,
                 heightLogo: 46,
                 backgroundColor: "0xFF0353CC",
-                registerFormKey: registerFormKey1,
+                registerFormKey: registerFormKey,
               ),
             ),
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
             sliver: MainContent(
-              registerFormKey1: registerFormKey1,
-              registerFormKey2: registerFormKey2,
-              registerFormKey3: registerFormKey3,
-              titleKey1: titleKey1,
-              introKey1: introKey1,
-              teacherKey1    : teacherKey1,
-              courseKey1     : courseKey1,
-              orientationKey1: orientationKey1,
+              registerFormKey: registerFormKey,
+              titleKey: titleKey,
+              introKey: introKey,
+              teacherKey    : teacherKey,
+              courseKey     : courseKey,
+              orientationKey: orientationKey,
             ),
           ),
         ],
@@ -127,8 +122,7 @@ class MyHomePage extends StatelessWidget {
           widthLogo: 29.73,
           heightLogo: 46,
           backgroundColor: "0xFF0353CC",
-          registerFormKey: registerFormKey1,
-          titleKey1: titleKey1,
+          registerFormKey: registerFormKey,
         ),
       ),
       drawer: Drawer(
@@ -169,28 +163,28 @@ class MyHomePage extends StatelessWidget {
             ListTile(
               title: const Text("Giới Thiệu"),
               onTap: () {
-                _scrollToPosition(introKey1.currentContext!);
+                _scrollToPosition(introKey.currentContext!);
                 Navigator.pop(context);
               },
             ),
             ListTile(
               title: const Text("Đội Ngũ Giảng Viên"),
               onTap: () {
-                _scrollToPosition(teacherKey1.currentContext!);
+                _scrollToPosition(teacherKey.currentContext!);
                 Navigator.pop(context);
               },
             ),
             ListTile(
               title: const Text("Khóa học"),
               onTap: () {
-                _scrollToPosition(courseKey1.currentContext!);
+                _scrollToPosition(courseKey.currentContext!);
                 Navigator.pop(context);
               },
             ),
             ListTile(
               title: const Text("Khóa học dành cho ai"),
               onTap: () {
-                _scrollToPosition(orientationKey1.currentContext!);
+                _scrollToPosition(orientationKey.currentContext!);
                 Navigator.pop(context);
               },
             ),
@@ -203,14 +197,12 @@ class MyHomePage extends StatelessWidget {
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
             sliver: MainContent(
-              registerFormKey1: registerFormKey1,
-              registerFormKey2: registerFormKey2,
-              registerFormKey3: registerFormKey3,
-              titleKey1: titleKey1,
-              introKey1: introKey1,
-              teacherKey1    : teacherKey1,
-              courseKey1     : courseKey1,
-              orientationKey1: orientationKey1,
+              registerFormKey: registerFormKey,
+              titleKey: titleKey,
+              introKey: introKey,
+              teacherKey    : teacherKey,
+              courseKey     : courseKey,
+              orientationKey: orientationKey,
             ),
           ),
         ],

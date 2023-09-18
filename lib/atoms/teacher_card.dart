@@ -21,20 +21,15 @@ class TeacherCard extends StatefulWidget {
 }
 
 class TeacherCardState extends State<TeacherCard> {
-  bool isHovered = false;
+  // bool isHovered = false;
   bool isTapped = false;
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
+    return GestureDetector(
+      onTap: () {
         setState(() {
-          isHovered = true;
-        });
-      },
-      onExit: (_) {
-        setState(() {
-          isHovered = false;
+          isTapped = true;
         });
       },
       child: Stack(
@@ -75,44 +70,6 @@ class TeacherCardState extends State<TeacherCard> {
               ),
             ],
           ),
-          if (isHovered)
-            Positioned(
-              bottom: widget.scale! > 600/1440?  (-120) * widget.scale! :  -MediaQuery.of(context).size.height /2,
-              left: 0,
-              right: 0,
-              child: InkWell(
-                child: const SizedBox(
-                  child: Image(
-                    image: AssetImage('assets/images/arrow_up.png'),
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    isTapped = true;
-                  });
-                },
-              ),
-            ),
-
-          // if screenwith < 600, always show arrow
-          if (MediaQuery.of(context).size.width <= 600)
-            Positioned(
-              bottom: widget.scale! > 600/1440?  (-120) * widget.scale! :  -MediaQuery.of(context).size.height /2,
-              left: 0,
-              right: 0,
-              child: InkWell(
-                child: const SizedBox(
-                  child: Image(
-                    image: AssetImage('assets/images/arrow_up.png'),
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    isTapped = true;
-                  });
-                },
-              ),
-            ),
         ],
       ),
     );

@@ -231,6 +231,7 @@ class CourseSummary extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(width: 15 * scale),
                     Column(
                       children: [
                         Container(

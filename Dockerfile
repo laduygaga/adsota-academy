@@ -11,7 +11,7 @@ COPY . .
 RUN flutter pub get
 
 # Build the Flutter web app for production
-RUN flutter build web
+RUN flutter build web --web-renderer html --release
 
 # Use a lightweight Nginx image as the base
 FROM nginx:latest

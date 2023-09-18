@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../pages/desktop2.dart';
+import '../pages/desktop3.dart';
 
 class CourseReference extends StatelessWidget {
   final String courseImageRefer;
@@ -27,11 +29,29 @@ class CourseReference extends StatelessWidget {
             ),
           ),
           SizedBox(width: 100 * scale),
-          Image.asset(
-            width: 480 * scale,
-            height: 265 * scale,
-            courseImageRefer,
-            fit: BoxFit.cover,
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                if (courseImageRefer == "assets/images/branding-mkt-3.png") {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Desktop2Page()),
+                  );
+                } else  {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Desktop3Page()),
+                  );
+                }
+              },
+              child: Image.asset(
+                width: 480 * scale,
+                height: 265 * scale,
+                courseImageRefer,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
         ],
       );
@@ -51,10 +71,28 @@ class CourseReference extends StatelessWidget {
               ),
             ),
             SizedBox(height: 100 * scale),
-            Image.asset(
-              width: scale * 1200 * 0.9,
-              courseImageRefer,
-              fit: BoxFit.cover,
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () {
+                  if (courseImageRefer == "assets/images/branding-mkt-3.png") {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Desktop2Page()),
+                    );
+                  } else  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Desktop3Page()),
+                    );
+                  }
+                },
+                child: Image.asset(
+                  width: scale * 1200 * 0.9,
+                  courseImageRefer,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             SizedBox(height: 100 * scale),
           ],

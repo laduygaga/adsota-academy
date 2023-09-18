@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adsota-academy-landing-page
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adsota-academy-landing-page
+  template:
+    metadata:
+      labels:
+        app: adsota-academy-landing-page
+    spec:
+      imagePullSecrets:
+        - name: wropibucmv
+      containers:
+        - name: adsota-academy-landing-page
+          imagePullPolicy: Always
+          image: docker.appota.com/ota-network/adsota-academy-landing-page:<DEPLOYMENT_TAG>
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: '2'
+              memory: 2048M
+            requests:
+              cpu: 500m
+              memory: 512M
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: adsota-academy-landing-page
+spec:
+  type: NodePort
+  selector:
+    app: adsota-academy-landing-page
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  namespace: adsota
+  name: adsota-academy-landing-page
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: 20m
+  labels:
+    app: adsota-academy-landing-page
+spec:
+  rules:
+    - host: academy.adsota.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: adsota-academy-landing-page
+              servicePort: 80
+  tls:
+    - secretName: adsota-academy-landing-page
+      hosts:
+        - academy.adsota.com

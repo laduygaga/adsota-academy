@@ -76,23 +76,26 @@ class ImageAnimationState extends State<ImageAnimation> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(height: widget.isTapped ? 65 * widget.scale! : 0),
-                      AnimatedContainer(
-                        height: !widget.isTapped ? 588.0 * widget.scale! : 130.0 * widget.scale!,
-                        width: !widget.isTapped ? 352 * widget.scale! : 130.0 * widget.scale!,
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.fastOutSlowIn,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: widget.isTapped
-                              ? Border.all(
-                                  color: const Color(0xFFFFFFFF),
-                                  width: 5,
-                                )
-                              : null,
-                          borderRadius: BorderRadius.circular(!widget.isTapped ? 24 : 130),
-                          image: DecorationImage(
-                            image: AssetImage(widget.image!),
-                            fit: BoxFit.cover,
+                      MouseRegion(
+                        cursor: !widget.isTapped ? SystemMouseCursors.click : SystemMouseCursors.basic,
+                        child: AnimatedContainer(
+                          height: !widget.isTapped ? 588.0 * widget.scale! : 130.0 * widget.scale!,
+                          width: !widget.isTapped ? 352 * widget.scale! : 130.0 * widget.scale!,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.fastOutSlowIn,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: widget.isTapped
+                                ? Border.all(
+                                    color: const Color(0xFFFFFFFF),
+                                    width: 5,
+                                  )
+                                : null,
+                            borderRadius: BorderRadius.circular(!widget.isTapped ? 24 : 130),
+                            image: DecorationImage(
+                              image: AssetImage(widget.image!),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),

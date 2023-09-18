@@ -1,5 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../atoms/social_media_button.dart';
+
+
 
 class Contact extends StatelessWidget {
   final double? maxWidth;
@@ -52,7 +56,7 @@ class Contact extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 80 * scale),
               child: Text(
-                "Appota Building, số 16 ngõ 71 Láng Hạ,\nquận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
+                "Appota Building, số 16 ngõ 71 Láng Hạ,\nquận Ba Đình, Hà Nội\n",
                 style: TextStyle(
                   color: const Color(0xFFFFFFFF),
                   fontSize: 20 * scale,
@@ -60,6 +64,39 @@ class Contact extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 19 * scale),
+            Padding(
+              padding: EdgeInsets.only(left: 80 * scale),
+              child: InkWell(
+                // onTap: () {
+                //   _makePhoneCall('0382802038');
+                // },
+                child: SelectableText(
+                  "0382 802 038",
+                  style: TextStyle(
+                      fontSize: 20 * scale,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white),
+                    ),
+              ),
+            ),
+            SizedBox(height: 19 * scale),
+            Padding(
+              padding: EdgeInsets.only(left: 80 * scale),
+              child: InkWell(
+                onTap: () {
+                  launchUrl(Uri.parse('mailto:adsotamkt@appota.com'));
+                },
+                child: Text(
+                  "Email: adsotamkt@appota.com",
+                  style: TextStyle(
+                      fontSize: 20 * scale,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(height: 65 * scale),
             Padding(
               padding: EdgeInsets.only(left: 80 * scale),
               child: Row(
@@ -72,11 +109,15 @@ class Contact extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox( width: 10 * scale),
-                  Image.asset(
-                    "assets/images/contact.png",
-                    fit: BoxFit.cover,
-                  ),
+                  const SizedBox( width: 8),
+                  const SocialMediaButton(
+                      icon: 'assets/images/web-icon.png', link: 'https://ota.network/'),
+                  const SizedBox( width: 8),
+                  const SocialMediaButton(
+                      icon: 'assets/images/fb-icon.png', link: 'https://www.facebook.com/adsota/'),
+                  const SizedBox( width: 8),
+                  const SocialMediaButton(
+                      icon: 'assets/images/linkedin-icon.png', link: 'https://vn.linkedin.com/company/adsota'),
                 ],
               ),
             ),
@@ -122,7 +163,7 @@ class Contact extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
-                "Appota Building, số 16 ngõ 71 Láng Hạ,\nquận Ba Đình, Hà Nội\n0382 802 038\n\nadsotamkt@appota.com\n",
+                "Appota Building, số 16 ngõ 71 Láng Hạ,\nquận Ba Đình, Hà Nội",
                 style: TextStyle(
                   color: Color(0xFFFFFFFF),
                   fontSize: 18,
@@ -130,11 +171,56 @@ class Contact extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 19),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 0),
+              padding: const EdgeInsets.only(left: 8),
+              child: 	InkWell(
+                onTap: () {_makePhoneCall('0382802038');},
+               //  onPressed: () async {
+               //  await _makePhoneCall('0382802038');
+               //  },
+                child: const Text(
+                  '0382 802 038',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white),
+                  ),
+              ),
+            ),
+            const SizedBox(height: 19),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              // child: SelectableLinkify(
+              //   onOpen: (link) {
+              //     launchUrl(Uri.parse('mailto:adsotamkt@appota.com'));
+              //   },
+              //   text: "Email: adsotamkt@appota.com",
+              //   style: const TextStyle(
+              //       fontSize: 16,
+              //       fontWeight: FontWeight.normal,
+              //       color: Colors.white),
+              // ),
+            child: InkWell(
+                  child: const Text(
+                  "Email: adsotamkt@appota.com",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white),
+                ),
+                onTap: () {
+                  final Uri url = Uri.parse('mailto:adsotamkt@appota.com');
+                  launchUrl(url);
+                },
+              ),
+            ),
+            const SizedBox(height: 65),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 0),
               child: Row(
                 children: [
-                  const Text(
+                  Text(
                     "Theo dõi chúng tôi tại",
                     style: TextStyle(
                       color: Color(0xFFFFFFFF),
@@ -142,11 +228,15 @@ class Contact extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox( width: 8),
-                  Image.asset(
-                    "assets/images/contact.png",
-                    fit: BoxFit.cover,
-                  ),
+                SizedBox( width: 8),
+                SocialMediaButton(
+                    icon: 'assets/images/web-icon.png', link: 'https://ota.network/'),
+                SizedBox( width: 8),
+                SocialMediaButton(
+                    icon: 'assets/images/fb-icon.png', link: 'https://www.facebook.com/adsota/'),
+                SizedBox( width: 8),
+                SocialMediaButton(
+                    icon: 'assets/images/linkedin-icon.png', link: 'https://vn.linkedin.com/company/adsota'),
                 ],
               ),
             ),
@@ -155,5 +245,13 @@ class Contact extends StatelessWidget {
       );
     }
   }
-}
+  /// Future<void> _makePhoneCall(String phoneNumber) async {
+  void _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    await launchUrl(launchUri);
+  }
 
+}

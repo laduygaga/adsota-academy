@@ -5,14 +5,10 @@ import '../pages/desktop3.dart';
 
 class Course extends StatelessWidget{
   final VoidCallback? onViewDetailsPressed; // Add this callback
-  final GlobalKey registerFormKey2;
-  final GlobalKey registerFormKey3;
   final double maxWidth;
   const Course({
     Key? key,
     required this.maxWidth,
-    required this.registerFormKey2,
-    required this.registerFormKey3,
     this.onViewDetailsPressed, // Add this callback
   }) : super(key: key);
 
@@ -30,7 +26,7 @@ class Course extends StatelessWidget{
             onViewDetailsPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Desktop2Page(registerFormKey: registerFormKey2,)),
+                MaterialPageRoute(builder: (context) => Desktop2Page()),
               );
             },
           ),
@@ -43,7 +39,7 @@ class Course extends StatelessWidget{
             onViewDetailsPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Desktop3Page(registerFormKey: registerFormKey3,)),
+                MaterialPageRoute(builder: (context) => Desktop3Page()),
               );
             },
           ),
@@ -62,7 +58,7 @@ class Course extends StatelessWidget{
             onViewDetailsPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Desktop2Page(registerFormKey: registerFormKey2,)),
+                MaterialPageRoute(builder: (context) => Desktop2Page()),
               );
             },
           ),
@@ -75,7 +71,7 @@ class Course extends StatelessWidget{
             onViewDetailsPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Desktop3Page(registerFormKey: registerFormKey3,)),
+                MaterialPageRoute(builder: (context) => Desktop3Page()),
               );
             },
           ),
@@ -93,7 +89,7 @@ class Course extends StatelessWidget{
             onViewDetailsPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Desktop2Page(registerFormKey: registerFormKey2,)),
+                MaterialPageRoute(builder: (context) => Desktop2Page()),
               );
             },
           ),
@@ -106,7 +102,7 @@ class Course extends StatelessWidget{
             onViewDetailsPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Desktop3Page(registerFormKey: registerFormKey3,)),
+                MaterialPageRoute(builder: (context) => Desktop3Page()),
               );
             },
           ),

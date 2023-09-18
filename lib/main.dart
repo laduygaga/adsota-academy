@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'home_page.dart';
 // import 'pages/desktop2.dart';
 // import 'pages/desktop3.dart';
@@ -16,6 +17,7 @@ import 'package:device_preview/device_preview.dart';
 // );
 
 void main() {
+  setUrlStrategy(PathUrlStrategy());
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
     //   routerConfig: _router,
     // );
     return MaterialApp(
-      title: "Adsota Academy",
+      title: "Adsota | Tailor-made for your brand",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

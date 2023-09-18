@@ -4,10 +4,9 @@ import '../molecules/appbar.dart';
 import '../templates/course_page.dart';
 
 class Desktop2Page extends StatelessWidget {
-  final GlobalKey registerFormKey;
-  const Desktop2Page({
+  final registerFormKey = GlobalKey<FormState>();
+  Desktop2Page({
     Key? key,
-    required this.registerFormKey
     }) : super(key: key);
  
   @override
